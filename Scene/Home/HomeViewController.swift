@@ -7,11 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController<HomeViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel = HomeViewModel()
         
     }
 
