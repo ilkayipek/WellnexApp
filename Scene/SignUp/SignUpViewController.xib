@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8gc-Qy-xH0">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zAz-Tb-6wx">
+                            <rect key="frame" x="10" y="103.66666666666669" width="373" height="280"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabını Oluştur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3o-zI-5l3">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ad Soyad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1h-AF-29k" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="59.999999999999986" width="373" height="40"/>
+                                    <color key="backgroundColor" name="LabelBackgroung"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="d0C-7R-L0J"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Posta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4mT-it-Ejo" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="120" width="373" height="40"/>
+                                    <color key="backgroundColor" name="LabelBackgroung"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waa-10-bEx" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="180" width="373" height="40"/>
+                                    <color key="backgroundColor" name="LabelBackgroung"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre Tekrar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzQ-r1-dpv" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="240" width="373" height="40"/>
+                                    <color key="backgroundColor" name="LabelBackgroung"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-YT-KCr">
+                            <rect key="frame" x="10" y="533.66666666666663" width="373" height="112.66666666666663"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47i-i0-nQc" customClass="CustomUIButton" customModule="SurdurulebilirMahalleler">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="39.333333333333336"/>
+                                    <color key="backgroundColor" name="ActiveButtonColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Oluştur" subtitle="">
+                                        <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="PrimaryText"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7O-L0-P2J">
+                                    <rect key="frame" x="0.0" y="71.333333333333371" width="373" height="41.333333333333343"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Mevcut Hesaba Giriş Yap">
+                                        <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                        <color key="baseForegroundColor" name="PrimaryText"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cQk-n5-hHd">
+                            <rect key="frame" x="98.333333333333329" y="646.33333333333337" width="196.33333333333337" height="127.66666666666663"/>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="unp-u8-prv"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="unp-u8-prv" firstAttribute="trailing" secondItem="9v3-YT-KCr" secondAttribute="trailing" constant="10" id="1zD-vp-kPF"/>
+                        <constraint firstItem="cQk-n5-hHd" firstAttribute="height" secondItem="8gc-Qy-xH0" secondAttribute="height" multiplier="0.15" id="3mG-83-5JO"/>
+                        <constraint firstItem="9v3-YT-KCr" firstAttribute="top" secondItem="zAz-Tb-6wx" secondAttribute="bottom" priority="999" constant="150" id="I86-Vt-s0U"/>
+                        <constraint firstItem="zAz-Tb-6wx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="unp-u8-prv" secondAttribute="top" constant="30" id="WPh-xF-5jZ"/>
+                        <constraint firstItem="cQk-n5-hHd" firstAttribute="top" secondItem="9v3-YT-KCr" secondAttribute="bottom" id="ZGr-b3-XBW"/>
+                        <constraint firstItem="cQk-n5-hHd" firstAttribute="centerX" secondItem="8gc-Qy-xH0" secondAttribute="centerX" id="aAO-uB-LFh"/>
+                        <constraint firstItem="cQk-n5-hHd" firstAttribute="width" secondItem="8gc-Qy-xH0" secondAttribute="width" multiplier="0.5" id="avv-FL-v1N"/>
+                        <constraint firstItem="9v3-YT-KCr" firstAttribute="leading" secondItem="unp-u8-prv" secondAttribute="leading" constant="10" id="cYO-Bk-mEJ"/>
+                        <constraint firstItem="9v3-YT-KCr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zAz-Tb-6wx" secondAttribute="bottom" constant="50" id="hG1-EQ-Bkd"/>
+                        <constraint firstItem="zAz-Tb-6wx" firstAttribute="leading" secondItem="unp-u8-prv" secondAttribute="leading" constant="10" id="iGt-UO-2EW"/>
+                        <constraint firstItem="unp-u8-prv" firstAttribute="trailing" secondItem="zAz-Tb-6wx" secondAttribute="trailing" constant="10" id="ktZ-yG-MKC"/>
+                        <constraint firstItem="unp-u8-prv" firstAttribute="bottom" secondItem="cQk-n5-hHd" secondAttribute="bottom" constant="10" id="mM2-j0-uio"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WPh-xF-5jZ"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <point key="canvasLocation" x="30" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="266.66665649414062" height="266.66665649414062"/>
+        <namedColor name="ActiveButtonColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LabelBackgroung">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryText">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
