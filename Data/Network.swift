@@ -19,6 +19,10 @@ class Network {
         database.settings = settings
     }
     
+    func refCreate(collection: FirebaseCollections,uid: String) -> DocumentReference {
+        return database.collection(collection.rawValue).document(uid)
+    }
+    
 }
 
 //Get Methots
@@ -129,7 +133,7 @@ extension Network {
     }
 
     // MARK: for single document fetch with query parameter
-    func getDocument<T: Decodable>(reference: DocumentReference, completion: @escaping (Result<T, Error>) -> Void) {
+    func getDocument<T: FirebaseIdentifiable>(reference: DocumentReference, completion: @escaping (Result<T, Error>) -> Void) {
         reference.getDocument { documentSnapshot, error in
             
             guard let data = try? documentSnapshot?.data(as: T.self) else {
