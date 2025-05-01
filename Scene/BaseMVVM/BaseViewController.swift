@@ -61,7 +61,7 @@ class BaseViewController<V: BaseViewModel>: UIViewController {
         let actionTitle = NSLocalizedString(actionTitle, comment: "")
         
         let cancelAction = UIAlertAction(title: "İptal", style: .cancel)
-        let action = UIAlertAction(title: actionTitle, style: .destructive, handler: handler)
+        let action = UIAlertAction(title: actionTitle, style: .default, handler: handler)
         
         alertMessage.addAction(cancelAction)
         alertMessage.addAction(action)
