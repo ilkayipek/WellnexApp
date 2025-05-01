@@ -12,6 +12,6 @@ class BaseViewModel {
     var loadingAnimationStop: (() -> Void)?
     var successAnimation: ((String) -> Void)?
     var failAnimation: ((String) -> Void)?
-    var alertMessage: ((String, String ,String, ((UIAlertAction) -> Void)?) -> Void)?
+    var alertMessage: ((_ alertTitle: String, _ alertMessage: String, _ actionTitle: String, _ handler: ((UIAlertAction) ->Void)? ) -> Void)?
     var gradientLoagingTabAnimation: CustomGradientLoadingAnimation?
 }
