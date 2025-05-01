@@ -14,7 +14,9 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
-
+    @IBOutlet weak var userTypeSelectSegmentedController: UISegmentedControl!
+    var userType: UserType = UserType.patient
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         let passwordConf = passwordConfirmationTextField.text ?? ""
         
         
-        viewModel?.signUp(fullName, email, password, passwordConf: passwordConf) { [weak self] status in
+        viewModel?.signUp(fullName, email, password, passwordConf, userType) { [weak self] status in
             guard let self else { return }
             
             self.successCreateAccount()
@@ -41,6 +43,18 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     func successCreateAccount() {
-        
     }
+    
+    @IBAction func userTypeChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            userType = .patient
+        case 1:
+            userType = .doctor
+        default:
+            userType = .patient
+        }
+    }
+    
 }
