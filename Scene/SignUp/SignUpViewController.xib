@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="4mT-it-Ejo" id="AxQ-A4-mok"/>
+                <outlet property="fullNameTextField" destination="b1h-AF-29k" id="ggi-Vl-MzY"/>
+                <outlet property="passwordConfirmationTextField" destination="XzQ-r1-dpv" id="6qX-mU-tdc"/>
+                <outlet property="passwordTextField" destination="waa-10-bEx" id="DnP-PB-jGz"/>
+                <outlet property="signUpButton" destination="47i-i0-nQc" id="w0g-GT-dnT"/>
+                <outlet property="userTypeSelectSegmentedController" destination="JpG-Pg-kPO" id="qiz-21-rmN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zAz-Tb-6wx">
+                    <rect key="frame" x="10" y="128" width="373" height="370"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabını Oluştur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3o-zI-5l3">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="35"/>
+                            <color key="textColor" name="primaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ad Soyad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1h-AF-29k" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="55" width="373" height="40"/>
+                            <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="d0C-7R-L0J" userLabel="height = 50"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Posta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4mT-it-Ejo" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="110" width="373" height="40"/>
+                            <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waa-10-bEx" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="165" width="373" height="40"/>
+                            <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre Tekrar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzQ-r1-dpv" customClass="CustomUITextField" customModule="SurdurulebilirMahalleler" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="220" width="373" height="40"/>
+                            <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-sl-b6J">
+                            <rect key="frame" x="0.0" y="275" width="373" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı  Tipi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAr-SJ-3Sx">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="23"/>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uyarı: Bu Özellik Birdaha Değiştirilemez." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41N-4h-f8w">
+                                    <rect key="frame" x="0.0" y="24" width="373" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" systemColor="systemRedColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-Pg-kPO">
+                            <rect key="frame" x="0.0" y="330" width="373" height="41"/>
+                            <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                            <segments>
+                                <segment title="Hasta"/>
+                                <segment title="Doktor"/>
+                            </segments>
+                            <color key="selectedSegmentTintColor" name="activePrimaryButtonColor"/>
+                            <connections>
+                                <action selector="userTypeChanged:" destination="-1" eventType="valueChanged" id="ihT-eU-xPv"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-YT-KCr">
+                    <rect key="frame" x="10" y="533.66666666666663" width="373" height="112.66666666666663"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47i-i0-nQc" customClass="CustomUIButton" customModule="WellnexApp">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="39.333333333333336"/>
+                            <color key="backgroundColor" name="activeButtonColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Oluştur" subtitle="">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="PrimaryText"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="signUpButtonTapped:" destination="-1" eventType="touchUpInside" id="cPS-VA-Cp6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7O-L0-P2J">
+                            <rect key="frame" x="0.0" y="71.333333333333371" width="373" height="41.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Mevcut Hesaba Giriş Yap">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="baseForegroundColor" name="activeSecondary"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="signInButtonTapped:" destination="-1" eventType="touchUpInside" id="aZv-0w-WpF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cQk-n5-hHd">
+                    <rect key="frame" x="98.333333333333329" y="656.33333333333337" width="196.33333333333337" height="127.66666666666663"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cQk-n5-hHd" secondAttribute="bottom" id="9HN-YN-CHa"/>
+                <constraint firstItem="cQk-n5-hHd" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="C7L-OQ-J7p"/>
+                <constraint firstItem="9v3-YT-KCr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="HCB-JR-jzj"/>
+                <constraint firstItem="cQk-n5-hHd" firstAttribute="top" secondItem="9v3-YT-KCr" secondAttribute="bottom" constant="10" id="IIo-Cm-2Xt"/>
+                <constraint firstItem="zAz-Tb-6wx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Xof-QW-0pY"/>
+                <constraint firstItem="9v3-YT-KCr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zAz-Tb-6wx" secondAttribute="bottom" constant="10" id="Zhs-Kd-9O1"/>
+                <constraint firstItem="cQk-n5-hHd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fvi-SL-4rt"/>
+                <constraint firstItem="zAz-Tb-6wx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="jb9-rp-geO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zAz-Tb-6wx" secondAttribute="trailing" constant="10" id="obZ-da-xzS"/>
+                <constraint firstItem="cQk-n5-hHd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="tDU-UI-8hW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9v3-YT-KCr" secondAttribute="trailing" constant="10" id="zCT-Oq-gkt"/>
+            </constraints>
+            <point key="canvasLocation" x="30" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="266.66665649414062" height="266.66665649414062"/>
+        <namedColor name="PrimaryText">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="activeButtonColor">
+            <color red="0.61547935009999999" green="0.74936884640000001" blue="0.37316149469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="activePrimaryButtonColor">
+            <color red="0.61547935009999999" green="0.74936884640000001" blue="0.37316149469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="activeSecondary">
+            <color red="0.30207771059999999" green="0.37472885849999998" blue="0.95647734399999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryLabelColor">
+            <color red="0.46420906740802165" green="0.56731392215757581" blue="0.28650675552541399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryTextFieldBackgroundColor">
+            <color red="0.61547935009999999" green="0.74936884640000001" blue="0.37316149469999998" alpha="0.48600475993377484" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
