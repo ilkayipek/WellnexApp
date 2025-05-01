@@ -40,9 +40,19 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
+        
     }
     
+    //Redirect to the relevant page according to user type status
     func successCreateAccount() {
+        
+        switch userType {
+            
+        case.doctor:
+            
+        case .patient:
+            
+        }
     }
     
     @IBAction func userTypeChanged(_ sender: UISegmentedControl) {
