@@ -16,13 +16,13 @@ class AuthManager {
         
     }
     
-    func signUpWithEmail(_ fullName: String,_ email: String,_ password: String,_ closure: @escaping (Bool,Error?) -> Void) {
+    func signUpWithEmail(_ fullName: String,_ email: String,_ password: String,userType: UserType,_ closure: @escaping (Bool,Error?) -> Void) {
         auth.createUser(withEmail: email, password: password) { [weak self] result, error in
             guard let self else {return}
             
             if let user = result?.user{
                 
-                self.createUserDocs(firebaseUser: user, fullName: fullName) { status, error in
+                self.createUserDocs(firebaseUser: user, fullName: fullName, userType: userType) { status, error in
                     if status {
                         self.signInWithEmail(email, password, closure)
                     }
@@ -53,8 +53,8 @@ class AuthManager {
 //MARK: User create documents
 extension AuthManager {
     
-    func createUserDocs(firebaseUser: User, fullName: String,_ completion: @escaping (Bool,Error?) -> Void) {
-        let userModel = createUserModel(firebaseUser, fullName: fullName)
+    func createUserDocs(firebaseUser: User, fullName: String,userType: UserType,_ completion: @escaping (Bool,Error?) -> Void) {
+        let userModel = createUserModel(firebaseUser, fullName: fullName, userType: userType)
         
         createUserModelDoc(user: userModel, completion)
         
@@ -64,7 +64,7 @@ extension AuthManager {
         
         Network.shared.post(user, to: .users) { (result: Result<UserModel, any Error>) in
             switch result {
-            case .success(let success):
+            case .success(_):
                 
                 UserInfo.shared.store(key: .userModel, value: user)
                 closure(true,nil)
@@ -108,15 +108,20 @@ extension AuthManager {
 //MARK: models create functions
 extension AuthManager {
     
-    func createUserModel(_ firebaseUser: User, fullName: String) -> UserModel {
+    func createUserModel(_ firebaseUser: User, fullName: String, userType: UserType) -> UserModel {
         
         let id = firebaseUser.uid
         let email = firebaseUser.email ?? ""
         let photoURLString = firebaseUser.photoURL?.absoluteString ?? ""
         let isVerified = firebaseUser.isEmailVerified
         let fullName = firebaseUser.displayName ?? fullName
+        let userName = "".generateUsername(length: 10)
         
-        return UserModel(id: id, email: email, fullName: fullName, photoUrl: photoURLString)
+        var userModel = UserModel(id: id, email: email, fullName: fullName, userName: userName, userType: userType)
+        userModel.isVerified = isVerified
+        userModel.photoUrl = photoURLString
+        
+        return userModel
     }
     
 }
