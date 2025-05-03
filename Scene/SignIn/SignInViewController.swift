@@ -8,6 +8,8 @@
 import UIKit
 
 class SignInViewController: BaseViewController<SignInViewModel> {
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +18,22 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         
     }
 
+    @IBAction func signInTapped(_ sender: Any) {
+        
+        viewModel?.signIn(email: email.text ?? "", password: password.text ?? "") { [weak self] status in
+            guard let self else {return}
+            guard status else {return}
+            
+            self.signInSuceed()
+        }
+    }
+   
+    @IBAction func iForgetMyPasswordButtonTapped(_ sender: Any) {
+        
+        viewModel?.iForgetMyPassword(email: email.text ?? "")
+    }
+    
+    private func signInSuceed() {
+        
+    }
 }
