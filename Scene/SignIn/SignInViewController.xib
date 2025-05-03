@@ -91,10 +91,21 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zOv-zD-mWi">
-                    <rect key="frame" x="98.333333333333329" y="565" width="196.33333333333337" height="189"/>
+                    <rect key="frame" x="98.333333333333329" y="508.66666666666669" width="196.33333333333337" height="245.33333333333331"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOf-fX-cgp">
+                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="36.333333333333336"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Kayıt Ol">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="baseForegroundColor" name="activeSecondaryButtonColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="SignUpButtonTapped:" destination="-1" eventType="touchUpInside" id="5NR-Y2-aYp"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZD-k6-J9Y">
-                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="41.333333333333336"/>
+                            <rect key="frame" x="0.0" y="56.333333333333314" width="196.33333333333334" height="41.333333333333343"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Şifremi Unuttıum">
                                 <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
@@ -105,7 +116,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-P4-ic4">
-                            <rect key="frame" x="0.0" y="61.333333333333378" width="196.33333333333334" height="127.66666666666669"/>
+                            <rect key="frame" x="0.0" y="117.66666666666669" width="196.33333333333334" height="127.66666666666669"/>
                         </imageView>
                     </subviews>
                 </stackView>
