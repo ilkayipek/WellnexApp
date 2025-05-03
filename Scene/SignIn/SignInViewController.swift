@@ -36,4 +36,9 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     private func signInSuceed() {
         
     }
+    @IBAction func SignUpButtonTapped(_ sender: Any) {
+        
+        let targerVc = SignUpViewController.loadFromNib()
+        self.navigationController?.pushViewController(targerVc, animated: true)
+    }
 }
