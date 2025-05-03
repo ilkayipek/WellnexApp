@@ -11,10 +11,19 @@ struct UserModel: FirebaseIdentifiable {
     
     var id: String
     var email: String
+    var fullName: String
+    var username: String
+    var photoUrl: String?
+    var userType: String?
     var isVerified: Bool = false
     var createdAt: Date = Date()
     var updateAt: Date = Date()
-    var fullName: String?
-    var userType: String?
-    var photoUrl: String?
+    
+    
+    init(id: String, email: String, fullName: String, userName: String) {
+        self.id = id
+        self.email = email
+        self.fullName = fullName
+        self.username = userName
+    }
 }
