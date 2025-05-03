@@ -20,10 +20,11 @@ struct UserModel: FirebaseIdentifiable {
     var updateAt: Date = Date()
     
     
-    init(id: String, email: String, fullName: String, userName: String) {
+    init(id: String, email: String, fullName: String, userName: String, userType: UserType) {
         self.id = id
         self.email = email
         self.fullName = fullName
         self.username = userName
+        self.userType = userType.rawValue
     }
 }
