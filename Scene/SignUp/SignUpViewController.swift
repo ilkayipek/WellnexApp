@@ -40,6 +40,8 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
+        let targetVc = SignInViewController.loadFromNib()
+        self.navigationController?.pushViewController(targetVc, animated: true)
         
     }
     
@@ -48,9 +50,9 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         
         switch userType {
             
-        case.doctor:
+        case.doctor: break
             
-        case .patient:
+        case .patient: break
             
         }
     }
