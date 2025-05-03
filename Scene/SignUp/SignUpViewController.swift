@@ -40,9 +40,8 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        let targetVc = SignInViewController.loadFromNib()
-        self.navigationController?.pushViewController(targetVc, animated: true)
         
+        self.navigationController?.popViewController(animated: true)
     }
     
     //Redirect to the relevant page according to user type status
