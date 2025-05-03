@@ -20,7 +20,7 @@ class SignUpViewModel: BaseViewModel {
                             
                             loadingAnimationStart?("Lütfen Bekleyin..")
                             
-                            AuthManager.shared.signUpWithEmail(fullName, email, password) { [weak self] status, error in
+                            AuthManager.shared.signUpWithEmail(fullName, email, password, userType: userType) { [weak self] status, error in
                                 guard let self else {return}
                                 if let error {
                                     self.failAnimation?("Bir Hata Oluştu!:\(error.localizedDescription)")
@@ -48,7 +48,7 @@ class SignUpViewModel: BaseViewModel {
         
     }
     
-    func isPasswordEqual(_ password: String, _ passwordAgain: String) ->Bool {
+    private func isPasswordEqual(_ password: String, _ passwordAgain: String) ->Bool {
         guard password == passwordAgain else {return false }
         return true
     }

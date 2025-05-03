@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="email" destination="PMJ-R1-fSD" id="DDb-jD-Lhs"/>
+                <outlet property="password" destination="rzs-N9-ssY" id="Grv-XW-DVd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qQ7-bk-aDu">
+                    <rect key="frame" x="10" y="127.99999999999999" width="373" height="221.66666666666663"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-zH-niQ">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="35"/>
+                            <color key="textColor" name="primaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-9N-k4E">
+                            <rect key="frame" x="0.0" y="59.999999999999993" width="373" height="102.33333333333331"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Posta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMJ-R1-fSD" customClass="CustomUITextField" customModule="WellnexApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="41"/>
+                                    <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzs-N9-ssY" customClass="CustomUITextField" customModule="WellnexApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="61" width="373" height="41.333333333333343"/>
+                                    <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moP-b1-PqT" customClass="CustomUIButton" customModule="WellnexApp">
+                            <rect key="frame" x="0.0" y="182.33333333333331" width="373" height="39.333333333333343"/>
+                            <color key="backgroundColor" name="activePrimaryButtonColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Giriş Yap" subtitle="">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="activePrimaryButtonColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="signInTapped:" destination="-1" eventType="touchUpInside" id="3aP-b0-Cw0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zOv-zD-mWi">
+                    <rect key="frame" x="98.333333333333329" y="508.66666666666669" width="196.33333333333337" height="245.33333333333331"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOf-fX-cgp">
+                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="36.333333333333336"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Kayıt Ol">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="baseForegroundColor" name="activeSecondaryButtonColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="SignUpButtonTapped:" destination="-1" eventType="touchUpInside" id="5NR-Y2-aYp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZD-k6-J9Y">
+                            <rect key="frame" x="0.0" y="56.333333333333314" width="196.33333333333334" height="41.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Şifremi Unuttıum">
+                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="baseForegroundColor" name="activeSecondaryButtonColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="iForgetMyPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="cx4-dr-ngP"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-P4-ic4">
+                            <rect key="frame" x="0.0" y="117.66666666666669" width="196.33333333333334" height="127.66666666666669"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ahb-P4-ic4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7o2-dz-y41"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qQ7-bk-aDu" secondAttribute="trailing" constant="10" id="FGI-Yn-UBs"/>
+                <constraint firstItem="qQ7-bk-aDu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Jbn-SY-Xuv"/>
+                <constraint firstItem="Ahb-P4-ic4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="Jto-tQ-sou"/>
+                <constraint firstItem="b4w-9N-k4E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.12" id="Ze8-og-8Ls"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zOv-zD-mWi" secondAttribute="bottom" constant="30" id="h5Y-Qa-zYq"/>
+                <constraint firstItem="zOv-zD-mWi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hS9-cb-4Vb"/>
+                <constraint firstItem="qQ7-bk-aDu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="pvC-dU-0Gq"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="266.66665649414062" height="266.66665649414062"/>
+        <namedColor name="activePrimaryButtonColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="activeSecondaryButtonColor">
+            <color red="0.30199998617172241" green="0.375" blue="0.95599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryLabelColor">
+            <color red="0.46399998664855957" green="0.56699997186660767" blue="0.28700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryTextFieldBackgroundColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="0.48600000143051147" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

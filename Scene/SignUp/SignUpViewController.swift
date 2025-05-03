@@ -41,6 +41,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         
+        self.navigationController?.popViewController(animated: true)
     }
     
     //Redirect to the relevant page according to user type status
@@ -48,9 +49,9 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         
         switch userType {
             
-        case.doctor:
+        case.doctor: break
             
-        case .patient:
+        case .patient: break
             
         }
     }
