@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window = UIWindow(windowScene: widowScene)
-        let navController = UINavigationController(rootViewController: SignInViewController())
         
         if let currentUser = AuthManager.shared.auth.currentUser {
             
@@ -38,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func transitToTabBarVc() {
-        let tabBar = MyProfileViewController.loadFromNib()
+        let tabBar = SignInViewController.loadFromNib()
         let rootVc = UINavigationController(rootViewController: tabBar)
         
         window?.rootViewController = rootVc
