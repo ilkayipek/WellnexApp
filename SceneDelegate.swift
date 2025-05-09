@@ -8,10 +8,10 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let widowScene = (scene as? UIWindowScene) else {
@@ -20,8 +20,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: widowScene)
         let navController = UINavigationController(rootViewController: SignInViewController())
-        window?.rootViewController = navController
+        
+        if let currentUser = AuthManager.shared.auth.currentUser {
+            
+            AuthManager.shared.getUserDocs(id: currentUser.uid) {[weak self] status, error in
+                
+                guard let self else {return}
+                guard error == nil, !status else {self.transitToTabBarVc(); return }
+                self.transitToSignInVc()
+            }
+        } else {
+            transitToSignInVc()
+        }
+        
         window?.makeKeyAndVisible()
+        
+    }
+    
+    private func transitToTabBarVc() {
+        let tabBar = MyProfileViewController.loadFromNib()
+        let rootVc = UINavigationController(rootViewController: tabBar)
+        
+        window?.rootViewController = rootVc
+        
+    }
+    
+    private func transitToSignInVc() {
+        let rootVc = SignInViewController()
+        let navigationVc = UINavigationController(rootViewController: rootVc)
+        
+        window?.rootViewController = navigationVc
         
     }
 
