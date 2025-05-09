@@ -19,10 +19,12 @@ class SignInViewModel: BaseViewModel {
                 guard let self else {return}
                 
                 guard status else {
-                    failAnimation?("\(error?.localizedDescription ?? "")"); return
+                    failAnimation?("\(error?.localizedDescription ?? "")")
+                    closure(false); return
                 }
                 
                 successAnimation?("Giriş Başarılı")
+                closure(true)
             }
         }
     }
