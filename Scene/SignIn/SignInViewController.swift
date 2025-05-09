@@ -35,6 +35,11 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     
     private func signInSuceed() {
         
+        let targetVc = MyProfileViewController.loadFromNib()
+        let newNavigationController = UINavigationController(rootViewController: targetVc)
+        newNavigationController.modalPresentationStyle = .fullScreen
+        self.present(newNavigationController, animated: true)
+        
     }
     @IBAction func SignUpButtonTapped(_ sender: Any) {
         
