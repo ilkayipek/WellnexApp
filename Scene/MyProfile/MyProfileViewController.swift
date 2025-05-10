@@ -158,7 +158,8 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func transitionToAddPatientScene() {
-        
+        let targetVc = AddPatientViewController.loadFromNib()
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
     
     

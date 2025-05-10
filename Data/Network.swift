@@ -29,7 +29,7 @@ class Network {
 extension Network {
     
     // MARK: For Single Documents with query parameter
-    func getOne<T: Decodable>(of type: T, with query: Query, completion: @escaping (Result<T, Error>) -> Void) {
+    func getOne<T: FirebaseIdentifiable>(of type: T.Type, with query: Query, completion: @escaping (Result<T, Error>) -> Void) {
         
         query.getDocuments { snapshot, error in
             
@@ -85,6 +85,7 @@ extension Network {
                     let data = try document.data(as: T.self)
                     responses.append(data)
                 } catch let error {
+                    print("Decode failed for document: \(document.documentID), error: \(error)")
                     decodeErrors.append(error)
                 }
             }

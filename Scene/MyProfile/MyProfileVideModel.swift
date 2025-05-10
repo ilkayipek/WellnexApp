@@ -32,8 +32,6 @@ class MyProfileVideModel: BaseViewModel {
     
     func updateRelationship(relationshipModel: PatientDoctorRelationshipModel, closure:@escaping (Bool) -> Void) {
         
-        let result: (Result<PatientDoctorRelationshipModel, any Error>)
-        
         Network.shared.put(relationshipModel, to: .patientDoctorRelationship) { [weak self] result in
             guard let self else {return}
             

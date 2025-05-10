@@ -47,13 +47,8 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     //Redirect to the relevant page according to user type status
     func successCreateAccount() {
         
-        switch userType {
-            
-        case.doctor: break
-            
-        case .patient: break
-            
-        }
+        let targeVc = MyProfileViewController.loadFromNib()
+        self.navigationController?.pushViewController(targeVc, animated: true)
     }
     
     @IBAction func userTypeChanged(_ sender: UISegmentedControl) {

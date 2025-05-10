@@ -18,17 +18,17 @@ struct PatientDoctorRelationshipModel: FirebaseIdentifiable{
     var notes: String
     var createdAt: Date
     
-    init(id: String, doctorId: String, patientId: String, patientName: String, doctorName: String, isActive: Bool, status: String, notes: String, createdAt: Date?) {
+    init(id: String, doctorId: String, patientId: String, patientName: String, doctorName: String, status: RelationshipStatus, note: String) {
         
         self.id = id
         self.doctorId = doctorId
         self.patientId = patientId
         self.patientName = patientName
         self.doctorName = doctorName
-        self.isActive = isActive
-        self.status = status
-        self.notes = notes
-        self.createdAt = createdAt ?? Date()
+        self.isActive = false
+        self.status = status.rawValue
+        self.notes = note
+        self.createdAt = Date()
     }
     
 }
