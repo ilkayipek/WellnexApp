@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssignTaskEndViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="daysOfWeeksCollectionView" destination="VcC-Mf-oVa" id="IqM-0f-ZDX"/>
+                <outlet property="endDatePicker" destination="cVO-Mz-MuI" id="kEm-ER-272"/>
+                <outlet property="startDatePicker" destination="oRf-5t-Nfw" id="ZJy-Bi-UI5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ClF-E6-UUp">
+                    <rect key="frame" x="10" y="128" width="373" height="296"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcD-Bn-rIc" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="113"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rca-8V-7Iv">
+                                    <rect key="frame" x="10" y="10" width="353" height="93"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qit-J1-b0d">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="93"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başlangıç " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-TD-xPB" userLabel="Başlangıç">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="43"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                                                    <color key="textColor" name="primaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="oRf-5t-Nfw">
+                                                    <rect key="frame" x="0.0" y="43" width="125" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Opk-Ys-GkT"/>
+                                                        <constraint firstAttribute="width" constant="125" id="lTL-LR-pjM"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="startDateChanged:" destination="-1" eventType="valueChanged" id="lAi-dI-bco"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mEp-vC-bTE">
+                                            <rect key="frame" x="228" y="0.0" width="125" height="93"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitiş" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVf-nH-fa1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="43"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                                                    <color key="textColor" name="primaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="cVO-Mz-MuI">
+                                                    <rect key="frame" x="0.0" y="43" width="125" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="3vw-dg-fSD"/>
+                                                        <constraint firstAttribute="width" constant="125" id="5nH-fx-oUC"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="endDateChanged:" destination="-1" eventType="valueChanged" id="kYZ-yd-17F"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="rca-8V-7Iv" secondAttribute="trailing" constant="10" id="bRc-lH-8OX"/>
+                                <constraint firstItem="rca-8V-7Iv" firstAttribute="leading" secondItem="CcD-Bn-rIc" secondAttribute="leading" constant="10" id="p76-yQ-hTh"/>
+                                <constraint firstAttribute="bottom" secondItem="rca-8V-7Iv" secondAttribute="bottom" constant="10" id="spx-Bu-DO4"/>
+                                <constraint firstItem="rca-8V-7Iv" firstAttribute="top" secondItem="CcD-Bn-rIc" secondAttribute="top" constant="10" id="zwx-ms-6DH"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="activePrimaryButtonColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mK-LP-iuu" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="123" width="373" height="173"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-CO-2RU">
+                                    <rect key="frame" x="10" y="10" width="353" height="153"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ölçüm Günleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-pd-6Wv">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
+                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                                            <color key="textColor" name="primaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VcC-Mf-oVa">
+                                            <rect key="frame" x="0.0" y="53" width="353" height="100"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="lkj-Hf-8bR"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uwY-oz-Q59">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Ntb-CO-2RU" secondAttribute="trailing" constant="10" id="4VZ-jw-QNy"/>
+                                <constraint firstAttribute="bottom" secondItem="Ntb-CO-2RU" secondAttribute="bottom" constant="10" id="jt7-OJ-sNq"/>
+                                <constraint firstItem="Ntb-CO-2RU" firstAttribute="top" secondItem="6mK-LP-iuu" secondAttribute="top" constant="10" id="lsi-ZV-8ao"/>
+                                <constraint firstItem="Ntb-CO-2RU" firstAttribute="leading" secondItem="6mK-LP-iuu" secondAttribute="leading" constant="10" id="tBt-fQ-CaL"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="activePrimaryButtonColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-fI-WnK" customClass="CustomUIButton" customModule="WellnexApp">
+                    <rect key="frame" x="135" y="474" width="123.33333333333331" height="37"/>
+                    <color key="backgroundColor" name="activePrimaryButtonColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Devam Et">
+                        <fontDescription key="titleFontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="activePrimaryButtonColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="assignTaskButtonTapped:" destination="-1" eventType="touchUpInside" id="kJY-re-3dt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="EWB-cJ-8pC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="EWB-cJ-8pC" firstAttribute="trailing" secondItem="ClF-E6-UUp" secondAttribute="trailing" constant="10" id="6ZT-tr-Lhm"/>
+                <constraint firstItem="2Ox-fI-WnK" firstAttribute="top" secondItem="ClF-E6-UUp" secondAttribute="bottom" constant="50" id="Hz6-eR-N5F"/>
+                <constraint firstItem="ClF-E6-UUp" firstAttribute="top" secondItem="EWB-cJ-8pC" secondAttribute="top" constant="10" id="NPu-hP-pEv"/>
+                <constraint firstItem="2Ox-fI-WnK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PvG-QG-i9l"/>
+                <constraint firstItem="ClF-E6-UUp" firstAttribute="leading" secondItem="EWB-cJ-8pC" secondAttribute="leading" constant="10" id="YOH-An-eQM"/>
+            </constraints>
+            <point key="canvasLocation" x="-396.18320610687022" y="-68.309859154929583"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="activePrimaryButtonColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryLabelColor">
+            <color red="0.46399998664855957" green="0.56699997186660767" blue="0.28700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

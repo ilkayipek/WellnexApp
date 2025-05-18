@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         */
         
         
-         let tabBar = SignInViewController.loadFromNib()
+         let tabBar = AssignTaskStartViewController.loadFromNib()
          let rootVc = UINavigationController(rootViewController: tabBar)
          
          window?.rootViewController = rootVc
