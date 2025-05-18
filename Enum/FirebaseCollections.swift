@@ -8,4 +8,6 @@
 enum FirebaseCollections: String {
     case users = "User"
     case patientDoctorRelationship = "PatientDoctorRelationship"
+    case measureTypes = "measureTypes"
+    case task = "Task"
 }
