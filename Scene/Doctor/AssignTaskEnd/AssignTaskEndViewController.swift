@@ -52,7 +52,6 @@ class AssignTaskEndViewController: BaseViewController<AssignTaskEndViewModel> {
     
     private func createTaskModel() -> TaskModel? {
         
-        guard let currentUser: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return nil}
         guard let measureId = measurement?.id else {return nil}
         guard let patientId = relation?.patientId, let doctorId = relation?.doctorId else {return nil}
         guard let relationId = relation?.id else {return nil}
@@ -63,14 +62,14 @@ class AssignTaskEndViewController: BaseViewController<AssignTaskEndViewModel> {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
         
-        let timeSlots: [DayOfWeek: [TimeSlotPeriod]] = selectedTimeSlotIndexes.reduce(into: [:]) { result, pair in
+        let timeSlots: [String: [String]] = selectedTimeSlotIndexes.reduce(into: [:]) { result, pair in
             let (dayIndex, hourIndexes) = pair
-            let day = DayOfWeek.allCases[dayIndex]
-            let selectedSlots = hourIndexes.map { TimeSlotPeriod.allCases[$0] }
+            let day = DayOfWeek.allCases[dayIndex].rawValue
+            let selectedSlots = hourIndexes.map { TimeSlotPeriod.allCases[$0].rawValue }
             result[day] = selectedSlots
         }
 
-        return TaskModel(id: id, assignedBy: doctorName, assignedTo: patientName, description: taskNote, measureTypeId: measureId, patientId: patientId, relationId: relationId, startDate: startDate, endDate: endDate, timeSlots: timeSlots)
+        return TaskModel(id: id, assignedBy: doctorName, assignedTo: patientName, description: taskNote, measureTypeId: measureId, patientId: patientId,doctorId: doctorId, relationId: relationId, startDate: startDate, endDate: endDate, timeSlots: timeSlots)
     }
     
     private func updateEndDatePicker(_ startDate: Date) {
