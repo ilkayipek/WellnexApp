@@ -14,10 +14,11 @@ struct TaskModel: FirebaseIdentifiable {
     let description: String
     let measureTypeId: String
     let patientId: String
+    let doctorId: String
     let relationId: String
     let startDate: Date
     let endDate: Date
-    let timeSlots: [DayOfWeek: [TimeSlotPeriod]]
+    let timeSlots: [String: [String]]
 }
 
 
