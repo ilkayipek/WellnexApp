@@ -17,14 +17,13 @@ class AssignTaskEndViewModel: BaseViewModel {
             guard let self else {return}
             
             switch result {
-            case .success(let success):
+            case .success(_):
                 closure(true)
+                self.successAnimation?("Görev Atama başarılı!")
             case .failure(let failure):
                 failAnimation?("HATA: \(failure.localizedDescription)")
                 closure(false)
             }
-            
-            loadingAnimationStop?()
         }
     }
     
