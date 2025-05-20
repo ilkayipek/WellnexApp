@@ -18,6 +18,7 @@ struct UserModel: FirebaseIdentifiable {
     var isVerified: Bool = false
     var createdAt: Date
     var updateAt: Date
+    var fcmToken: String?
     
     
     init(id: String, email: String, fullName: String, userName: String, userType: UserType) {
