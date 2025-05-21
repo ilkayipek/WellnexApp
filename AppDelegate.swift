@@ -51,13 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
        //APNs token'ını FCM ile ilişkilendir
        Messaging.messaging().apnsToken = deviceToken
      }
-    
-    
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        NotificationManager.shared.fetchAndScheduleLocalNotifications()
-    }
-
 
 }
 
