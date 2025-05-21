@@ -52,43 +52,63 @@ class NotificationManager {
     }
     
     private func setNotifications(_ results: [TaskInstanceModel]) {
-        
-        let todayStr = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+        let now = Date()
+        let todayStr = DateFormatter.localizedString(from: now, dateStyle: .short, timeStyle: .none)
         let center = UNUserNotificationCenter.current()
         
         for result in results {
-            
             let taskId = result.id
             let slotStart = result.slotStart
-            let components = slotStart.split(separator: ":")
-            guard components.count == 2,
-                  let hour = Int(components[0]),
-                  let minute = Int(components[1]) else {
+            let slotEnd = result.slotEnd
+            
+            // 🔽 Ortak fonksiyon: "HH:mm" → Date
+            func dateFor(time: String) -> Date? {
+                let components = time.split(separator: ":")
+                guard components.count == 2,
+                      let hour = Int(components[0]),
+                      let minute = Int(components[1]) else { return nil }
+                
+                var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
+                dateComponents.hour = hour
+                dateComponents.minute = minute
+                
+                return Calendar.current.date(from: dateComponents)
+            }
+            
+            guard let startDate = dateFor(time: slotStart),
+                  let endDate = dateFor(time: slotEnd) else {
                 continue
             }
             
-            var dateComponents = DateComponents()
-            dateComponents.hour = hour
-            dateComponents.minute = minute
+            let startReminderDate = Calendar.current.date(byAdding: .minute, value: -15, to: startDate)!
+            let endReminderDate = Calendar.current.date(byAdding: .minute, value: -15, to: endDate)!
             
-            let content = UNMutableNotificationContent()
-            content.title = "📍 Görev Zamanı"
-            content.body = "\(slotStart) saatinde ölçüm yapmayı unutma!"
-            content.sound = .default
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            let request = UNNotificationRequest(identifier: taskId, content: content, trigger: trigger)
-            
-            center.add(request) { error in
-                if let error = error {
-                    print("❌ Bildirim planlanamadı: \(error.localizedDescription)")
-                } else {
-                    print("✅ Bildirim planlandı: \(taskId) için \(slotStart)")
-                }
+            if startReminderDate > now {
+                let startContent = UNMutableNotificationContent()
+                startContent.title = "⏰ Görev Yaklaşıyor"
+                startContent.body = "\(slotStart) saatinde ölçüm başlayacak. Hazırlanmayı unutma!"
+                startContent.sound = .default
+
+                let startComponents = Calendar.current.dateComponents([.hour, .minute], from: startReminderDate)
+                let startTrigger = UNCalendarNotificationTrigger(dateMatching: startComponents, repeats: false)
+                let startRequest = UNNotificationRequest(identifier: "\(taskId)_start", content: startContent, trigger: startTrigger)
+                center.add(startRequest)
+            }
+
+            if endReminderDate > now {
+                let endContent = UNMutableNotificationContent()
+                endContent.title = "⏳ Süre Dolmak Üzere"
+                endContent.body = "\(slotEnd) saatine kadar ölçüm yapmayı unutma!"
+                endContent.sound = .default
+
+                let endComponents = Calendar.current.dateComponents([.hour, .minute], from: endReminderDate)
+                let endTrigger = UNCalendarNotificationTrigger(dateMatching: endComponents, repeats: false)
+                let endRequest = UNNotificationRequest(identifier: "\(taskId)_end", content: endContent, trigger: endTrigger)
+                center.add(endRequest)
             }
         }
-        
-        // ✅ Başarıyla planladıysak UserDefaults’a işaret bırak
+
         UserDefaults.standard.set(todayStr, forKey: "lastPlannedDate")
     }
+
 }
