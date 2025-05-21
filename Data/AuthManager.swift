@@ -6,6 +6,7 @@
 
 import FirebaseAuth
 import Firebase
+import FirebaseMessaging
 
 class AuthManager {
     static let shared = AuthManager()
@@ -44,6 +45,7 @@ class AuthManager {
                 guard error == nil else {closure(false,error); return}
                 guard status else {closure(false,nil); return}
                 
+                self.setFcmToken()
                 closure(true, nil)
             }
         }
@@ -103,6 +105,22 @@ extension AuthManager {
             
         }
     }
+    
+    func setFcmToken() {
+        guard var user: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return}
+        
+        Messaging.messaging().token { [weak self] token, error in
+            guard let self else {return}
+            guard let token else {return}
+            
+            user.fcmToken = token
+            
+            self.updateUserModel(user) { _ in
+                print("fcm token updated")
+            }
+            
+        }
+    }
 }
 
 //MARK: models create functions
@@ -122,6 +140,25 @@ extension AuthManager {
         userModel.photoUrl = photoURLString
         
         return userModel
+    }
+    
+}
+
+//MARK: models update functions
+extension AuthManager {
+    
+    func updateUserModel(_ user: UserModel,_ closure: @escaping(Bool)-> Void ) {
+        
+        Network.shared.put(user, to: .users) { result in
+            
+            switch result {
+            case .success(_):
+                closure(true)
+            case .failure(let error):
+                print(error.localizedDescription)
+                closure(false)
+            }
+        }
     }
     
 }

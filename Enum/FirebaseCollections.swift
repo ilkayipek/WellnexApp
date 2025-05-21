@@ -10,4 +10,5 @@ enum FirebaseCollections: String {
     case patientDoctorRelationship = "PatientDoctorRelationship"
     case measureTypes = "measureTypes"
     case task = "Task"
+    case taskInstances = "TaskInstances"
 }
