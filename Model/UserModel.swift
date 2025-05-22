@@ -14,7 +14,7 @@ struct UserModel: FirebaseIdentifiable {
     var fullName: String
     var username: String
     var photoUrl: String?
-    var userType: String
+    var userType: UserType
     var isVerified: Bool = false
     var createdAt: Date
     var updateAt: Date
@@ -26,7 +26,7 @@ struct UserModel: FirebaseIdentifiable {
         self.email = email
         self.fullName = fullName
         self.username = userName
-        self.userType = userType.rawValue
+        self.userType = userType
         self.createdAt = Date()
         self.updateAt = Date()
     }
