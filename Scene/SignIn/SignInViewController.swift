@@ -34,11 +34,19 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     }
     
     private func signInSuceed() {
+        guard let currentUsr: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return}
         
-        let targetVc = AddTaskPatientSelectionViewController.loadFromNib()
-        let newNavigationController = UINavigationController(rootViewController: targetVc)
-        newNavigationController.modalPresentationStyle = .fullScreen
-        self.present(newNavigationController, animated: true)
+        switch currentUsr.userType {
+            
+        case .doctor:
+            break
+        case .patient:
+            let targetVc = PatientTabBarController.loadFromNib()
+            let newNavigationController = UINavigationController(rootViewController: targetVc)
+            newNavigationController.modalPresentationStyle = .fullScreen
+            self.present(newNavigationController, animated: true)
+        }
+        
         
     }
     @IBAction func SignUpButtonTapped(_ sender: Any) {
