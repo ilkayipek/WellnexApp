@@ -33,7 +33,7 @@ class MyProfileDetailTableViewCell: UITableViewCell {
         email.text = currentUser.email
         username.text = currentUser.username
         
-        let userTypeString = currentUser.userType
+        let userTypeString = currentUser.userType.rawValue
         self.userType.text = userTypeString
         let userTypeEnum = UserType(rawValue: userTypeString) ?? .patient
         
