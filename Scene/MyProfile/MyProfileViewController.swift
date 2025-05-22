@@ -47,7 +47,7 @@ class MyProfileViewController: BaseViewController<MyProfileVideModel> {
     
     private func getRelationships() {
         let id = currentUser!.id
-        let userTypeString = currentUser!.userType
+        let userTypeString = currentUser!.userType.rawValue
         let userTypeEnum = UserType(rawValue: userTypeString) ?? .doctor
         
         viewModel?.getRelationship(id: id, userType: userTypeEnum) { [weak self] results in
@@ -108,7 +108,7 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func createRelationshipCell(at indexPath: IndexPath, index: Int) -> UITableViewCell {
-        let userType = UserType(rawValue: currentUser!.userType) ?? .doctor
+        let userType = currentUser!.userType
         
         switch userType {
             
