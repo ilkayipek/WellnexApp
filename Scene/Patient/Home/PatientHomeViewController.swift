@@ -15,6 +15,7 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
         let upcoming = allTasks.filter { $0.isUpcoming }
         let inProgress = allTasks.filter { $0.isInProgress }
         let overdue = allTasks.filter { $0.isOverdue }
+        let completed = allTasks.filter({ $0.isCompleted && !$0.isInProgress })
 
         var sections: [TaskSection] = []
 
@@ -28,6 +29,10 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
 
         if !overdue.isEmpty {
             sections.append(TaskSection(title: "Geçmiş ve Tamamlanmamış", tasks: overdue))
+        }
+        
+        if !completed.isEmpty {
+            sections.append(TaskSection(title: "Geçmiş ve Tamamlananlar", tasks: completed))
         }
 
         return sections
