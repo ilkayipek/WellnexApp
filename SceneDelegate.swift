@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         */
         
         
-         let tabBar = PatientHomeViewController.loadFromNib()
+         let tabBar = SignInViewController.loadFromNib()
          let rootVc = UINavigationController(rootViewController: tabBar)
          
          window?.rootViewController = rootVc
