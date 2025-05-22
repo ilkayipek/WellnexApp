@@ -11,6 +11,9 @@ class TaskInstanceTableViewCell: UITableViewCell {
     @IBOutlet weak var measureImageView: CustomUIImageView!
     @IBOutlet weak var measureLabel: UILabel!
     @IBOutlet weak var slotHourRange: UILabel!
+    @IBOutlet weak var completedButton: UIButton!
+    @IBOutlet weak var editableButton: UIButton!
+    @IBOutlet weak var containerView: CustomContainerUIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,25 @@ class TaskInstanceTableViewCell: UITableViewCell {
         
         measureLabel.text = measureTypeLbl?.rawValue
         slotHourRange.text = model.slot
+        
+        completedButton.isHidden = !model.isCompleted
+        
+        if model.isOverdue{
+            containerView.borderColor = UIColor.red
+            editableButton.isHidden = true
+            
+        } else if model.isInProgress{
+            containerView.borderColor = UIColor.activePrimaryButton
+            editableButton.isHidden = false
+            
+        } else if model.isCompleted{
+            containerView.borderColor = UIColor.activePrimaryButton
+            editableButton.isHidden = true
+            
+        } else {
+            containerView.borderColor = UIColor.systemYellow
+            editableButton.isHidden = true
+        }
         
         switch measureTypeLbl {
         case .bloodSugar:

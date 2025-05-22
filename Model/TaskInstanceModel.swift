@@ -16,19 +16,15 @@ struct TaskInstanceModel: FirebaseIdentifiable {
     var slot: String                // Örn: "18:00-22:00"
     var slotStart: String           // Örn: "18:00"
     var slotEnd: String             // Örn: "22:00"
-    var scheduledTime: String       // ISO 8601 string: "2025-05-20T18:00:00+03:00"
+    var scheduledDate: Date?      // ISO 8601 string: "2025-05-20T18:00:00+03:00"
     var date: Date?
     var createdAt: Date?
     var measureTypeModel: MeasurementModel?
-
-    // ISO 8601 formatlı string'i gerçek Date'e çevirir
-    var scheduledDate: Date? {
-        ISO8601DateFormatter().date(from: scheduledTime)
-    }
+    var value: Double?
 
     // Görev şu anda geçerli saat aralığında mı?
     var isInProgress: Bool {
-        guard !isCompleted,
+        guard
               let start = slotStartAsDate,
               let end = slotEndAsDate else { return false }
 

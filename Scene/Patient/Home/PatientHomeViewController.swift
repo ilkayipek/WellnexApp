@@ -15,19 +15,24 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
         let upcoming = allTasks.filter { $0.isUpcoming }
         let inProgress = allTasks.filter { $0.isInProgress }
         let overdue = allTasks.filter { $0.isOverdue }
+        let completed = allTasks.filter({ $0.isCompleted && !$0.isInProgress })
 
         var sections: [TaskSection] = []
 
         if !inProgress.isEmpty {
-            sections.append(TaskSection(title: "🟡 Devam Eden Görevler", tasks: inProgress))
+            sections.append(TaskSection(title: "Devam Eden Görevler", tasks: inProgress))
         }
 
         if !upcoming.isEmpty {
-            sections.append(TaskSection(title: "🔵 Yaklaşan Görevler", tasks: upcoming))
+            sections.append(TaskSection(title: "Yaklaşan Görevler", tasks: upcoming))
         }
 
         if !overdue.isEmpty {
-            sections.append(TaskSection(title: "🔴 Geçmiş ve Tamamlanmamış", tasks: overdue))
+            sections.append(TaskSection(title: "Geçmiş ve Tamamlanmamış", tasks: overdue))
+        }
+        
+        if !completed.isEmpty {
+            sections.append(TaskSection(title: "Geçmiş ve Tamamlananlar", tasks: completed))
         }
 
         return sections
@@ -53,19 +58,25 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
         taskInstancesTableView.refreshControl = refreshControl
     }
     
-    func openEditScreen(_ taskInstance: TaskInstanceModel) {
+    func openEditScreen(_ taskInstance: TaskInstanceModel, index: Int) {
         
+        let targetVc = CompleteTaskInstanceViewController.loadFromNib()
+        
+        targetVc.completeDelegate = self
+        targetVc.setTaskInstance(taskInstance, index: index)
+        
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
     
     private func getTaskInstances() {
         
         viewModel?.fetchTaskInstances { [weak self] results in
             guard let self else {return}
-            guard !results.isEmpty else {return}
+            self.taskInstancesTableView.refreshControl?.endRefreshing()
             
             self.allTasks = results
             self.taskInstancesTableView.reloadData()
-            self.taskInstancesTableView.refreshControl?.endRefreshing()
+          
         }
     }
     
@@ -90,11 +101,11 @@ extension PatientHomeViewController: UITableViewDelegate, UITableViewDataSource 
         let label = UILabel()
         label.text = taskSections[section].title
         label.font = UIFont(name: "Georgia-Bold", size: 25)
-        label.textColor = UIColor.activePrimaryButtonColor
+        label.textColor = UIColor.black
         label.backgroundColor = UIColor.clear
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.frame = CGRect(x: 0, y: 0, width: tableView.frame.width - 32, height: 40)
+        label.frame = CGRect(x: 5, y: 0, width: tableView.frame.width - 32, height: 40)
 
         let container = UIView()
         container.addSubview(label)
@@ -119,9 +130,19 @@ extension PatientHomeViewController: UITableViewDelegate, UITableViewDataSource 
 
             if task.isInProgress {
                
-                openEditScreen(task)
+                openEditScreen(task, index: indexPath.row)
             }
     }
     
+    
+}
+
+extension PatientHomeViewController: CompleteTaskInstanceDelegate {
+    
+    func taskInstanceComleted(_ newIntance: TaskInstanceModel, index: Int) {
+        
+        let indexPath = IndexPath(row: index, section: 0)
+        taskInstancesTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
     
 }

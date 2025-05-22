@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteTaskInstanceViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="measureDescriptionLabel" destination="DRn-77-xtp" id="vJ4-7z-KsB"/>
+                <outlet property="measureTypeImageView" destination="9Ec-X6-bob" id="fv3-h3-VeF"/>
+                <outlet property="measureTypeNameLabel" destination="qsg-ok-NJS" id="lpM-bb-K6c"/>
+                <outlet property="measureUnit" destination="Hvx-ff-BfO" id="j7T-td-0Fx"/>
+                <outlet property="measureValue" destination="8Rc-PQ-rWS" id="Gmr-ry-GsN"/>
+                <outlet property="slotLabel" destination="Mpf-9u-SL0" id="iZ9-8U-xe2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6M5-w0-gTP" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
+                    <rect key="frame" x="10" y="127.99999999999997" width="373" height="312.33333333333326"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-MI-Rrs">
+                            <rect key="frame" x="10" y="10" width="373" height="292.33333333333331"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ölçüm Tipi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsg-ok-NJS" userLabel="GörevNotuLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="34.333333333333336"/>
+                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="30"/>
+                                    <color key="textColor" name="primaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gün-Slot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpf-9u-SL0" userLabel="GörevNotuLabel">
+                                    <rect key="frame" x="0.0" y="44.333333333333343" width="373" height="24"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="textColor" name="primaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-h6-WdQ">
+                                    <rect key="frame" x="0.0" y="78.333333333333343" width="373" height="120"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ec-X6-bob" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
+                                            <rect key="frame" x="136.66666666666666" y="10" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="FzS-xn-3dy"/>
+                                                <constraint firstAttribute="width" constant="100" id="rdd-a6-zIb"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                    <real key="value" value="50"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="activePrimaryButtonColor"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="9Ec-X6-bob" secondAttribute="bottom" constant="10" id="9M2-cD-4cN"/>
+                                        <constraint firstItem="9Ec-X6-bob" firstAttribute="centerX" secondItem="xXg-h6-WdQ" secondAttribute="centerX" id="NrT-PZ-XEf"/>
+                                        <constraint firstItem="9Ec-X6-bob" firstAttribute="top" secondItem="xXg-h6-WdQ" secondAttribute="top" constant="10" id="ybI-rM-r5A"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal Değer Alalığı" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRn-77-xtp" userLabel="GörevNotuLabel">
+                                    <rect key="frame" x="0.0" y="208.33333333333331" width="373" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-8y-3C9">
+                                    <rect key="frame" x="0.0" y="242.33333333333331" width="373" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birim:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-ff-BfO" userLabel="Birim">
+                                            <rect key="frame" x="268" y="14.666666666666687" width="100" height="20.666666666666671"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="cAQ-a1-81t"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="18"/>
+                                            <color key="textColor" name="primaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-PQ-rWS">
+                                            <rect key="frame" x="5" y="5" width="258" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="sz3-uD-9oc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Hvx-ff-BfO" firstAttribute="leading" secondItem="8Rc-PQ-rWS" secondAttribute="trailing" constant="5" id="0mz-1C-2zD"/>
+                                        <constraint firstItem="8Rc-PQ-rWS" firstAttribute="leading" secondItem="Q1s-8y-3C9" secondAttribute="leading" constant="5" id="7m0-Zd-sgj"/>
+                                        <constraint firstAttribute="bottom" secondItem="8Rc-PQ-rWS" secondAttribute="bottom" constant="5" id="L5Y-jP-XYD"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hvx-ff-BfO" secondAttribute="trailing" constant="5" id="RR9-51-4Bg"/>
+                                        <constraint firstItem="8Rc-PQ-rWS" firstAttribute="top" secondItem="Q1s-8y-3C9" secondAttribute="top" constant="5" id="UoI-lv-IPp"/>
+                                        <constraint firstItem="Hvx-ff-BfO" firstAttribute="centerY" secondItem="Q1s-8y-3C9" secondAttribute="centerY" id="haZ-wS-2T2"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="IsG-MI-Rrs" secondAttribute="trailing" constant="-10" id="1mn-nc-6kd"/>
+                        <constraint firstItem="IsG-MI-Rrs" firstAttribute="top" secondItem="6M5-w0-gTP" secondAttribute="top" constant="10" id="4qM-Ey-n0H"/>
+                        <constraint firstAttribute="bottom" secondItem="IsG-MI-Rrs" secondAttribute="bottom" constant="10" id="REE-je-cdf"/>
+                        <constraint firstItem="IsG-MI-Rrs" firstAttribute="leading" secondItem="6M5-w0-gTP" secondAttribute="leading" constant="10" id="ZXE-Eh-lOH"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="primaryTextFieldBackgroundColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6M5-w0-gTP" secondAttribute="trailing" constant="10" id="A0z-Cq-QTG"/>
+                <constraint firstItem="6M5-w0-gTP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Ma4-6q-eSE"/>
+                <constraint firstItem="6M5-w0-gTP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ofp-14-3a8"/>
+            </constraints>
+            <point key="canvasLocation" x="45" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="activePrimaryButtonColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryLabelColor">
+            <color red="0.46399998664855957" green="0.56699997186660767" blue="0.28700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryTextFieldBackgroundColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="0.48600000143051147" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
