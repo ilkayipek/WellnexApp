@@ -38,11 +38,17 @@ class TaskInstanceTableViewCell: UITableViewCell {
         if model.isOverdue{
             containerView.borderColor = UIColor.red
             editableButton.isHidden = true
-        } else if model.isInProgress {
+            
+        } else if model.isInProgress{
             containerView.borderColor = UIColor.activePrimaryButton
             editableButton.isHidden = false
+            
+        } else if model.isCompleted{
+            containerView.borderColor = UIColor.activePrimaryButton
+            editableButton.isHidden = true
+            
         } else {
-            containerView.borderColor = UIColor.gray
+            containerView.borderColor = UIColor.systemYellow
             editableButton.isHidden = true
         }
         
