@@ -20,7 +20,7 @@ class DaySelectionCollectionViewCell: UICollectionViewCell {
     
     func loadCell(with dayOfWeek: String, status: Bool) {
         
-        dayButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        dayButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         dayButton.setTitle(dayOfWeek, for: .normal)
         dayButton.setTitle(dayOfWeek, for: .selected)
         dayButton.setTitleColor(.white, for: .selected)

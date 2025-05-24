@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssignedTasksViewController" customModule="WellnexApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyMessageContainerView" destination="tuT-W4-gQQ" id="Nm4-Zv-ngA"/>
+                <outlet property="tasksTableView" destination="ACh-Wb-QwV" id="b23-4N-ceu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ACh-Wb-QwV">
+                    <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuT-W4-gQQ" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
+                    <rect key="frame" x="10" y="347.66666666666669" width="363" height="156.66666666666669"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size uygun bir görev henüz yüklenmemiş gibi görünüyor 🤖📭 Beklemede kalın!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhc-cN-b2j">
+                            <rect key="frame" x="10" y="10" width="343" height="136.66666666666666"/>
+                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="30"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Fhc-cN-b2j" secondAttribute="bottom" constant="10" id="91K-HR-1zR"/>
+                        <constraint firstItem="Fhc-cN-b2j" firstAttribute="leading" secondItem="tuT-W4-gQQ" secondAttribute="leading" constant="10" id="jwW-q7-epG"/>
+                        <constraint firstItem="Fhc-cN-b2j" firstAttribute="top" secondItem="tuT-W4-gQQ" secondAttribute="top" constant="10" id="lxB-LU-w2l"/>
+                        <constraint firstAttribute="trailing" secondItem="Fhc-cN-b2j" secondAttribute="trailing" constant="10" id="tBB-G4-79s"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="activePrimaryButtonColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ACh-Wb-QwV" secondAttribute="trailing" id="0Ea-iU-AEF"/>
+                <constraint firstItem="ACh-Wb-QwV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6at-5y-aX3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tuT-W4-gQQ" secondAttribute="trailing" constant="20" id="CPH-jv-6a8"/>
+                <constraint firstItem="tuT-W4-gQQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="SRy-92-K6z"/>
+                <constraint firstItem="ACh-Wb-QwV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hlF-Bj-8Y0"/>
+                <constraint firstItem="tuT-W4-gQQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="icw-Bq-PIu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ACh-Wb-QwV" secondAttribute="bottom" id="voN-bm-Sgz"/>
+            </constraints>
+            <point key="canvasLocation" x="62" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="activePrimaryButtonColor">
+            <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
