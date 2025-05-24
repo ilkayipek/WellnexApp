@@ -18,6 +18,7 @@ class PatientTabBarController: UITabBarController {
     func addTabItems() {
         
         let homeVc = PatientHomeViewController()
+        let assignedTasks = AssignedTasksViewController()
         let myProfile = MyProfileViewController()
         
         
@@ -34,10 +35,13 @@ class PatientTabBarController: UITabBarController {
         homeVc.tabBarItem = UITabBarItem(title: "Ana sayfa", image: UIImage(systemName: "house"), tag: 0)
         homeVc.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
         
+        assignedTasks.tabBarItem = UITabBarItem(title: "Tanımlı Görevler", image: UIImage(systemName: "list.bullet"), tag: 2)
+        assignedTasks.tabBarItem.selectedImage = UIImage(systemName: "list.bullet.fill")
+        
         myProfile.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 3)
         myProfile.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
         
-        setViewControllers([homeVc,myProfile], animated: true)
+        setViewControllers([homeVc,assignedTasks,myProfile], animated: true)
         
     }
 }
