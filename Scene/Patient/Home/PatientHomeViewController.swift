@@ -9,6 +9,8 @@ import UIKit
 
 class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
     @IBOutlet weak var taskInstancesTableView: UITableView!
+    @IBOutlet weak var emptyTaskMsgContainer: CustomContainerUIView!
+    
     var allTasks = [TaskInstanceModel]()
 
     var taskSections: [TaskSection] {
@@ -76,6 +78,7 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
             
             self.allTasks = results
             self.taskInstancesTableView.reloadData()
+            self.emptyTaskMsgContainer.isHidden = !results.isEmpty
           
         }
     }
@@ -100,7 +103,7 @@ extension PatientHomeViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.text = taskSections[section].title
-        label.font = UIFont(name: "Georgia-Bold", size: 25)
+        label.font = UIFont(name: "Georgia-Bold", size: 20)
         label.textColor = UIColor.black
         label.backgroundColor = UIColor.clear
         label.textAlignment = .left
