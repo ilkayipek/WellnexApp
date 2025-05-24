@@ -23,6 +23,12 @@ class AssignTaskSelectHourViewController: BaseViewController<AssignTaskSelectHou
         setupCollectionView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        sendToSelectedIndexes()
+    }
+    
     func updateSelectedHours(_ updtSelectedHours: [Int], dayIndexPath: IndexPath) {
         
         selectedDayIndex = dayIndexPath
@@ -30,6 +36,14 @@ class AssignTaskSelectHourViewController: BaseViewController<AssignTaskSelectHou
         selectedHourIndexes.removeAll()
         selectedHourIndexes = updtSelectedHours
     }
+    
+    private func sendToSelectedIndexes() {
+        guard let selectedDayIndex else {return}
+        let selectedHourIndexes: [Int]  = hoursCollectionVeiw.indexPathsForSelectedItems?.map { $0.row} ?? []
+        
+        selectedHoursDelegate?.updateHourSelectedIndexes(dayIndex: selectedDayIndex.row, hourSelectedIndexes: selectedHourIndexes)
+    }
+
     
     private func setupCollectionView() {
         if let layout = hoursCollectionVeiw.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -50,14 +64,6 @@ class AssignTaskSelectHourViewController: BaseViewController<AssignTaskSelectHou
         }
     }
 
-    @IBAction func okeyButtonTapped(_ sender: Any) {
-        guard let selectedDayIndex else {return}
-        let selectedHourIndexes: [Int]  = hoursCollectionVeiw.indexPathsForSelectedItems?.map { $0.row} ?? []
-        
-        selectedHoursDelegate?.updateHourSelectedIndexes(dayIndex: selectedDayIndex.row, hourSelectedIndexes: selectedHourIndexes)
-        
-        self.navigationController?.popViewController(animated: true)
-    }
 }
 
 extension AssignTaskSelectHourViewController: UICollectionViewDelegate, UICollectionViewDataSource {
