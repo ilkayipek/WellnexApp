@@ -45,7 +45,6 @@ class AuthManager {
                 guard error == nil else {closure(false,error); return}
                 guard status else {closure(false,nil); return}
                 
-                self.setFcmToken()
                 closure(true, nil)
             }
         }
@@ -90,13 +89,17 @@ extension AuthManager {
         
         let docRef = Network.shared.refCreate(collection: .users, uid: id)
         
-        Network.shared.getDocument(reference: docRef) { (result: Result<UserModel, any Error>) in
+        Network.shared.getDocument(reference: docRef) { [weak self] (result: Result<UserModel, any Error>) in
+            guard let self else {return}
             
             switch result {
             case .success(let user):
                 
                 UserInfo.shared.store(key: .userModel, value: user)
+                self.getMeasureTypes()
+                self.setFcmToken()
                 completion(true, nil)
+                
                 
             case .failure(let failure):
                 
@@ -119,6 +122,23 @@ extension AuthManager {
                 print("fcm token updated")
             }
             
+        }
+    }
+    
+    func getMeasureTypes() {
+        let network = Network.shared
+        let collection = network.database.collection(FirebaseCollections.measureTypes.rawValue)
+        let query = collection.order(by: "id", descending: true)
+        
+        network.getMany(of: MeasurementModel.self, with: query) { result in
+            
+            switch result {
+                
+            case .success(let results):
+                UserInfo.shared.store(key: .measureTypes, value: results)
+            case .failure(let error):
+                print("HATA: \(error.localizedDescription)")
+            }
         }
     }
 }
