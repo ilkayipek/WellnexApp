@@ -8,4 +8,5 @@
 enum UserInfoEnum {
     case userModel
     case UserDetailModel
+    case measureTypes
 }
