@@ -12,4 +12,17 @@ extension UIImageView {
     func loadImageFromAssets(_ name: AssetsImageName)  {
         self.image = UIImage(named: name.rawValue)
     }
+    
+    func loadMeasureTypeImage(_ measureType: MeasureType)  {
+        switch measureType {
+        case .bloodSugar:
+            loadImageFromAssets(.bloodSugar)
+        case .pulse:
+            loadMeasureTypeImage(.pulse)
+        case .bodyTemperature:
+            loadImageFromAssets(.bodyTemperature)
+        case .bloodPressure:
+            loadImageFromAssets(.bloodPressure)
+        }
+    }
 }
