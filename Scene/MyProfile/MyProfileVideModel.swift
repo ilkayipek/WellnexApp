@@ -11,11 +11,11 @@ class MyProfileVideModel: BaseViewModel {
         
         let collection = Network.shared.database.collection(FirebaseCollections.patientDoctorRelationship.rawValue)
         var query = collection.whereField("patientId", isEqualTo: id)
-
+        
         if userType == .doctor {
             query = collection.whereField("doctorId", isEqualTo: id)
         }
-                
+        
         Network.shared.getMany(of: PatientDoctorRelationshipModel.self, with: query) { [weak self] result in
             guard let self else { closure(nil); return}
             
@@ -47,5 +47,17 @@ class MyProfileVideModel: BaseViewModel {
                 failAnimation?("HATA: \(error.localizedDescription) Doktor Hasta İlişkisi Güncellenemedi.")
             }
         }
+    }
+    
+    func signOut(_ closure: @escaping(Bool)->Void) {
+        
+        do {
+            try AuthManager.shared.auth.signOut()
+            closure(true)
+        } catch let error{
+            closure(false)
+            failAnimation?("Hata: \(error.localizedDescription)")
+        }
+        
     }
 }
