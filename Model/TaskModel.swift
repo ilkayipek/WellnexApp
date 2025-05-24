@@ -19,6 +19,7 @@ struct TaskModel: FirebaseIdentifiable {
     let startDate: Date
     let endDate: Date
     let timeSlots: [String: [String]]
+    var measureTypeModel: MeasurementModel?
 }
 
 
