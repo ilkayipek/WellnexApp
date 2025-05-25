@@ -9,6 +9,7 @@ import UIKit
 
 class MyProfileViewController: BaseViewController<MyProfileVideModel> {
     @IBOutlet weak var profileTableView: UITableView!
+    
     var currentUser: UserModel?
     var patientDoctorRelationships = [PatientDoctorRelationshipModel]()
 
@@ -66,7 +67,23 @@ class MyProfileViewController: BaseViewController<MyProfileVideModel> {
             $0.status == status.rawValue && $1.status != status.rawValue
         }
     }
+    
+    private func transitionToSignInScene() {
+        
+        let rootVc = SignInViewController.loadFromNib()
+        let navVc = UINavigationController(rootViewController: rootVc)
+        navVc.modalPresentationStyle = .fullScreen
+        present(navVc, animated: true)
+    }
 
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        viewModel?.signOut { [weak self] status in
+            
+            guard let self else {return}
+            guard status else {return}
+            self.transitionToSignInScene()
+        }
+    }
 }
 
 
