@@ -32,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             transitToSignInVc()
         }
         
-        
         /*
          let tabBar = SignInViewController.loadFromNib()
          let rootVc = UINavigationController(rootViewController: tabBar)
@@ -49,7 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         switch user.userType {
         case .doctor:
-            break
+            let tabBar = DoctorTabBarController.loadFromNib()
+            let rootVc = UINavigationController(rootViewController: tabBar)
+            
+            window?.rootViewController = rootVc
         case .patient:
             let tabBar = PatientTabBarController.loadFromNib()
             let rootVc = UINavigationController(rootViewController: tabBar)
@@ -76,6 +78,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("🔍 Notification Settings: \(settings.authorizationStatus.rawValue)")
+        }
         NotificationManager.shared.fetchAndScheduleLocalNotifications()
     }
 
