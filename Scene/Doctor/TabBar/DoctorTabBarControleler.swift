@@ -17,7 +17,7 @@ class DoctorTabBarController: UITabBarController {
     
     func addTabItems() {
         
-        //let homeVc = PatientHomeViewController()
+        let myPatients = MyPatientsViewController()
         let patientSelect = AddTaskPatientSelectionViewController()
         let myProfile = MyProfileViewController()
         
@@ -32,8 +32,8 @@ class DoctorTabBarController: UITabBarController {
         tabBar.insertSubview(shadowView, at: 0)
         
         
-        //homeVc.tabBarItem = UITabBarItem(title: "Ana sayfa", image: UIImage(systemName: "house"), tag: 0)
-        //homeVc.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
+        myPatients.tabBarItem = UITabBarItem(title: "Hastalarım", image: UIImage(systemName: "person.3"), tag: 0)
+        myPatients.tabBarItem.selectedImage = UIImage(systemName: "person.3.fill")
         
         patientSelect.tabBarItem = UITabBarItem(title: "Görev Tanımla", image: UIImage(systemName: "plus.app"), tag: 2)
         patientSelect.tabBarItem.selectedImage = UIImage(systemName: "plus.app.fill")
@@ -41,7 +41,7 @@ class DoctorTabBarController: UITabBarController {
         myProfile.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 3)
         myProfile.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
         
-        setViewControllers([patientSelect,myProfile], animated: true)
+        setViewControllers([myPatients,patientSelect,myProfile], animated: true)
         
     }
 }
