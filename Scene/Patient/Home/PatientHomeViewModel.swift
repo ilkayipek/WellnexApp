@@ -11,9 +11,9 @@ class PatientHomeViewModel: BaseViewModel {
     
     
     func fetchTaskInstances(_ closure: @escaping([TaskInstanceModel])->Void ) {
-        //guard let curentUsr: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return}
-        let usrId = "FPyltm7SfgVtTwGAiL1Q4vDJBSk1"
+        guard let currentUsr: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return}
         
+        let usrId = currentUsr.id
         let calendar = Calendar.current
         let startOfDay = calendar.startOfDay(for: Date())
         
