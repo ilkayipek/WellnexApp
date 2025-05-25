@@ -64,7 +64,7 @@ class MyProfileViewController: BaseViewController<MyProfileVideModel> {
     private func sortByStatus(status: RelationshipStatus) {
         
         patientDoctorRelationships.sort {
-            $0.status == status.rawValue && $1.status != status.rawValue
+            $0.status == status && $1.status != status
         }
     }
     
@@ -161,7 +161,7 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     private func updateRelationshipModel(at index: Int, status: RelationshipStatus, isActive: Bool ) {
         
         var updateModel = patientDoctorRelationships[index]
-        updateModel.status = status.rawValue
+        updateModel.status = status
         updateModel.isActive = isActive
         
         viewModel?.updateRelationship(relationshipModel: updateModel) { [weak self] status in
