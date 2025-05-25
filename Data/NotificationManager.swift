@@ -20,10 +20,10 @@ class NotificationManager {
         let startOfDay = calendar.startOfDay(for: Date())
         let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
 
-        // 1️⃣ Mevcut tüm bildirimleri temizle
+        // Mevcut tüm bildirimleri temizle
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
-        // 2️⃣ Görevleri çek
+        // Görevleri çek
         let network = Network.shared
         let collection = network.database.collection(FirebaseCollections.taskInstances.rawValue)
         let query = collection
@@ -69,7 +69,6 @@ class NotificationManager {
             }
 
             let startReminderDate = Calendar.current.date(byAdding: .minute, value: -15, to: startDate)!
-            let endReminderDate = Calendar.current.date(byAdding: .minute, value: -15, to: endDate)!
 
             if startReminderDate > now {
                 let startContent = UNMutableNotificationContent()
@@ -82,19 +81,6 @@ class NotificationManager {
                 let startRequest = UNNotificationRequest(identifier: "\(taskId)_start", content: startContent, trigger: startTrigger)
                 print("Planlandı: \(startReminderDate)")
                 center.add(startRequest)
-            }
-
-            if endReminderDate > now {
-                let endContent = UNMutableNotificationContent()
-                endContent.title = "⏳ Süre Dolmak Üzere"
-                endContent.body = "\(slotEnd) saatine kadar ölçüm yapmayı unutma!"
-                endContent.sound = .default
-
-                let endComponents = Calendar.current.dateComponents([.hour, .minute], from: endReminderDate)
-                let endTrigger = UNCalendarNotificationTrigger(dateMatching: endComponents, repeats: false)
-                let endRequest = UNNotificationRequest(identifier: "\(taskId)_end", content: endContent, trigger: endTrigger)
-                print("Planlandı: \(startReminderDate)")
-                center.add(endRequest)
             }
         }
 
