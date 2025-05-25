@@ -26,12 +26,10 @@ class MyProfilePatientsTableViewCell: UITableViewCell {
     
     func loadCell(relationshipModel: PatientDoctorRelationshipModel) {
         fullName.text = relationshipModel.patientName
-        relationStatus.text = relationshipModel.status
+        relationStatus.text = relationshipModel.status.rawValue
         relationshipNote.text = relationshipModel.notes
         
-        let statusEnum = RelationshipStatus(rawValue: relationshipModel.status) ?? .pending
-        
-        switch statusEnum {
+        switch relationshipModel.status {
         case .pending:
             
             containerView.borderColor = UIColor.lightGray
