@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="MyPatientsTableViewCell" customModule="WellnexApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="187"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2a-7e-JAi" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="331" height="167"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yiU-Oa-N5i">
+                                <rect key="frame" x="100" y="15" width="221" height="137"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="fullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICK-HR-TFv">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="66.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bağlantı Notu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iR-sB-S3D">
+                                        <rect key="frame" x="0.0" y="72.333333333333329" width="221" height="17.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="relationNote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MR-yU-kmc">
+                                        <rect key="frame" x="0.0" y="95.666666666666671" width="221" height="17.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNE-DA-PrP">
+                                        <rect key="frame" x="0.0" y="119" width="221" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="patient" translatesAutoresizingMaskIntoConstraints="NO" id="V86-qB-cTc" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
+                                <rect key="frame" x="15" y="48.666666666666657" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1B0-FU-7yI"/>
+                                    <constraint firstAttribute="height" constant="70" id="mAj-Qs-Hws"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="primaryLabelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yiU-Oa-N5i" secondAttribute="bottom" constant="15" id="0Ep-wI-kKf"/>
+                            <constraint firstAttribute="trailing" secondItem="yiU-Oa-N5i" secondAttribute="trailing" constant="10" id="1pt-Yo-lhc"/>
+                            <constraint firstItem="V86-qB-cTc" firstAttribute="leading" secondItem="K2a-7e-JAi" secondAttribute="leading" constant="15" id="AVF-jK-gmL"/>
+                            <constraint firstItem="yiU-Oa-N5i" firstAttribute="top" secondItem="K2a-7e-JAi" secondAttribute="top" constant="15" id="L7k-v4-Uar"/>
+                            <constraint firstItem="yiU-Oa-N5i" firstAttribute="leading" secondItem="V86-qB-cTc" secondAttribute="trailing" constant="15" id="ioZ-gf-n3E"/>
+                            <constraint firstItem="V86-qB-cTc" firstAttribute="centerY" secondItem="K2a-7e-JAi" secondAttribute="centerY" id="tNY-J6-6AL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="primaryLabelColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K2a-7e-JAi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3bS-Bu-4DX"/>
+                    <constraint firstAttribute="bottom" secondItem="K2a-7e-JAi" secondAttribute="bottom" constant="10" id="EDt-Qe-WV8"/>
+                    <constraint firstAttribute="trailing" secondItem="K2a-7e-JAi" secondAttribute="trailing" constant="10" id="L0S-yi-4IB"/>
+                    <constraint firstItem="K2a-7e-JAi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bMK-gD-9NF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="K2a-7e-JAi" id="CJS-Z6-Z01"/>
+                <outlet property="fullName" destination="ICK-HR-TFv" id="Ssu-JU-QoU"/>
+                <outlet property="profileImage" destination="V86-qB-cTc" id="tgV-XM-tqK"/>
+                <outlet property="relationDate" destination="vNE-DA-PrP" id="64w-NM-zkb"/>
+                <outlet property="relationshipNote" destination="3MR-yU-kmc" id="yyC-Mu-vbm"/>
+            </connections>
+            <point key="canvasLocation" x="86.25954198473282" y="70.070422535211264"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="patient" width="512" height="512"/>
+        <namedColor name="primaryLabelColor">
+            <color red="0.46399998664855957" green="0.56699997186660767" blue="0.28700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
