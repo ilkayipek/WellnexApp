@@ -33,7 +33,10 @@ class AssignTaskEndViewController: BaseViewController<AssignTaskEndViewModel> {
     }
     
     func succeededAssignTask() {
-        
+        let targetVc = DoctorTabBarController.loadFromNib()
+        let navVc = UINavigationController(rootViewController: targetVc)
+        navVc.modalPresentationStyle = .fullScreen
+        present(navVc, animated: true)
     }
     
     private func postTaskModel(_ task: TaskModel) {
