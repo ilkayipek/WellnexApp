@@ -15,7 +15,7 @@ class MyPatientInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var taskInstanceSegmentedControl: UISegmentedControl!
     
-    var segmentedControlHandler: ((Int) -> Void)?
+    weak var segmentedControlDelegate: SegmentedControlDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +40,6 @@ class MyPatientInfoTableViewCell: UITableViewCell {
     }
     
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
-        segmentedControlHandler?(sender.selectedSegmentIndex)
+        segmentedControlDelegate?.valueChanged(to :sender.selectedSegmentIndex)
     }
 }
