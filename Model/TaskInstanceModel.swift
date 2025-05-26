@@ -13,14 +13,15 @@ struct TaskInstanceModel: FirebaseIdentifiable {
     var taskId: String
     var measureTypeId: String
     var isCompleted: Bool
-    var slot: String                // Örn: "18:00-22:00"
+    var slot: String
     var slotStart: String           // Örn: "18:00"
     var slotEnd: String             // Örn: "22:00"
-    var scheduledDate: Date?      // ISO 8601 string: "2025-05-20T18:00:00+03:00"
+    var scheduledDate: Date?
     var date: Date?
     var createdAt: Date?
     var measureTypeModel: MeasurementModel?
     var value: Double?
+    var assignedBy: String?
 
     // Görev şu anda geçerli saat aralığında mı?
     var isInProgress: Bool {
@@ -51,17 +52,15 @@ struct TaskInstanceModel: FirebaseIdentifiable {
         isCompleted
     }
 
-    // Yardımcı: slotStart'ı Date'e çevirir
     var slotStartAsDate: Date? {
         return timeComponentAsDate(from: slotStart)
     }
 
-    // 🧩 Yardımcı: slotEnd'i Date'e çevirir
     var slotEndAsDate: Date? {
         return timeComponentAsDate(from: slotEnd)
     }
 
-    // 🛠 Ortak tarih oluşturucu (slot saatini aynı günle birleştirir)
+    // Ortak tarih oluşturucu (slot saatini aynı günle birleştirir)
     private func timeComponentAsDate(from timeString: String) -> Date? {
         guard let baseDate = scheduledDate else { return nil }
 
