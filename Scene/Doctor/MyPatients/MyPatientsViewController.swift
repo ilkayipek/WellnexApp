@@ -80,4 +80,12 @@ extension MyPatientsViewController: UITableViewDelegate, UITableViewDataSource {
             deleteRelationship(at: indexPath)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let patientId = myPatientRelations[indexPath.row].patientId
+        
+        let targetVc = MyPatientDetailViewController.loadFromNib()
+        targetVc.loadData(patientId: patientId)
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
 }
