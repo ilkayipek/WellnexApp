@@ -14,6 +14,7 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
     private var patientDetail: UserModel?
     private var segmentedControlSelectedIndex: Int = 0
     private var weeklyTaskInstanceSections = [TaskSection]()
+    private var assignedTasks = [TaskModel]()
     
 
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
         
         myPatientDetailTableView.registerCellFromNib(MyPatientInfoTableViewCell.self)
         myPatientDetailTableView.registerCellFromNib(MyPatientTaskInstanceTableViewCell.self)
+        myPatientDetailTableView.registerCellFromNib(AssignedTasksTableViewCell.self)
         
         
         let refreshControl = UIRefreshControl()
@@ -41,10 +43,7 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
         myPatientDetailTableView.refreshControl = refreshControl
     }
     
-    func valueChangedSegmentedControl(_ index: Int) {
-        segmentedControlSelectedIndex = index
-        myPatientDetailTableView.reloadData()
-    }
+
     
     
     @objc private func getDetails() {
@@ -62,20 +61,46 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
             self.myPatientDetailTableView.reloadData()
             self.myPatientDetailTableView.refreshControl?.endRefreshing()
         }
+        
+        viewModel?.fetchAssignedTasks(patientId) { [weak self] results in
+            guard let self else {return}
+            
+            self.assignedTasks = results
+            self.myPatientDetailTableView.reloadData()
+        }
     }
 
-    
+    private func deleteTask(_ indexPath: IndexPath) {
+        let task = assignedTasks[indexPath.row]
+        
+        viewModel?.deleteTask(task) { [weak self] status in
+            guard let self else {return}
+            guard status else {return}
+            
+            self.assignedTasks.remove(at: indexPath.row)
+            self.myPatientDetailTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
 }
 
 extension MyPatientDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        weeklyTaskInstanceSections.count
+        if segmentedControlSelectedIndex == 0 {
+            return weeklyTaskInstanceSections.count
+        }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section != 0 {
-            return weeklyTaskInstanceSections[section].tasks.count
+            if segmentedControlSelectedIndex == 0 {
+                return weeklyTaskInstanceSections[section].tasks.count
+            } else {
+                return assignedTasks.count
+            }
+            
         } else {
             return patientDetail == nil ? 0 : 1
         }
@@ -83,7 +108,10 @@ extension MyPatientDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return weeklyTaskInstanceSections[section].title
+        if segmentedControlSelectedIndex == 0 {
+            return weeklyTaskInstanceSections[section].title
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,22 +119,63 @@ extension MyPatientDetailViewController: UITableViewDelegate, UITableViewDataSou
         if indexPath.section == 0 {
             let cell = myPatientDetailTableView.sameNameDequeueReusableCell(MyPatientInfoTableViewCell.self, indexPath: indexPath)
             
-            cell.segmentedControlHandler? = { [weak self] index in
-                guard let self else {return}
-                
-                self.valueChangedSegmentedControl(index)
-            }
-            
             cell.loadCell(currentUser: patientDetail!)
+            cell.segmentedControlDelegate = self
+            
             return cell
-        } else {
+        } else if segmentedControlSelectedIndex == 0{
             let cell = myPatientDetailTableView.sameNameDequeueReusableCell(MyPatientTaskInstanceTableViewCell.self, indexPath: indexPath)
             
             let taskInstance = weeklyTaskInstanceSections[indexPath.section].tasks[indexPath.row]
             cell.loadCell(taskInstance)
             return cell
             
+        } else {
+            let cell = myPatientDetailTableView.sameNameDequeueReusableCell(AssignedTasksTableViewCell.self, indexPath: indexPath)
+            
+            let task = assignedTasks[indexPath.row]
+            cell.loadCell(task)
+            
+            return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if indexPath.section != 0, segmentedControlSelectedIndex == 1{
+            
+            let targetVc = AssignedTaskDetailViewController.loadFromNib()
+            targetVc.loadTaskData(assignedTasks[indexPath.row])
+            self.navigationController?.pushViewController(targetVc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        
+        if indexPath.section != 0, segmentedControlSelectedIndex == 1 {
+            
+            if editingStyle == .delete {
+                
+                deleteTask(indexPath)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return indexPath.section != 0 && segmentedControlSelectedIndex == 1
+    }
+
+}
+
+extension MyPatientDetailViewController: SegmentedControlDelegate {
+    
+    func valueChanged(to index: Int) {
+        
+        segmentedControlSelectedIndex = index
+        myPatientDetailTableView.reloadData()
     }
 }
