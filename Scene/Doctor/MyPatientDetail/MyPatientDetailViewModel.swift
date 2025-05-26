@@ -96,5 +96,62 @@ class MyPatientDetailViewModel: BaseViewModel {
         return sections
     }
     
+    func fetchAssignedTasks(_ patientId: String,_ closure: @escaping([TaskModel])->Void) {
+        guard let measureTypes: [MeasurementModel] = UserInfo.shared.retrieve(key: .measureTypes) else {closure([]); return}
+        
+        
+        
+        let network = Network.shared
+        let collectionStr = FirebaseCollections.task.rawValue
+        let collection = network.database.collection(collectionStr)
+        let query = collection.whereField("patientId", isEqualTo: patientId)
+        
+        network.getMany(of: TaskModel.self, with: query) { [weak self] result in
+            guard let self else {closure([]); return}
+            
+            switch result {
+                
+            case .success(let tasks):
+                let newTasks: [TaskModel] = tasks.compactMap { task in
+                    var newTask = task
+                    newTask.measureTypeModel = measureTypes.first(where: { $0.id == newTask.measureTypeId })
+                    return newTask
+                }
+                
+                closure(newTasks)
+            case .failure(let error):
+                failAnimation?("HATA: \(error.localizedDescription)")
+                closure([])
+            }
+        }
+        
+    }
+    
+    func deleteTask(_ task: TaskModel,_ closure: @escaping(Bool)->Void) {
+        
+        
+        alertMessage?("", "Görevi silmek istediğinizden emin misiniz?", "Sil") {[weak self] _ in
+            guard let self else {return}
+            
+            self.loadingAnimationStart?("")
+            Network.shared.delete(task, in: .task) {  result in
+                
+                switch result {
+                    
+                case .success():
+                    closure(true)
+                    
+                case .failure(let failure):
+                    self.failAnimation?("HATA: \(failure.localizedDescription)")
+                    closure(false)
+                }
+                
+                self.loadingAnimationStop?()
+            }
+        }
+        
+        
+    }
+    
     
 }
