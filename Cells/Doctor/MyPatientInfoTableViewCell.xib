@@ -18,28 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="395" height="267"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="6Sr-UA-gt3">
-                        <rect key="frame" x="10" y="211.66666666666666" width="375" height="45.333333333333343"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtI-HF-ADr">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="45.333333333333336"/>
-                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-0d-nTd">
-                                <rect key="frame" x="170" y="0.0" width="205" height="46.333333333333336"/>
-                                <segments>
-                                    <segment title="Son Ölçümler"/>
-                                    <segment title="Raporlar"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" name="activePrimaryButtonColor"/>
-                                <connections>
-                                    <action selector="valueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="RUW-jH-PYS"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                    </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="patient" translatesAutoresizingMaskIntoConstraints="NO" id="awE-YL-gyf" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
                         <rect key="frame" x="15" y="15" width="100" height="100"/>
                         <constraints>
@@ -59,19 +37,19 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ARx-en-qwL">
-                        <rect key="frame" x="125" y="10" width="125.66666666666669" height="186.66666666666666"/>
+                        <rect key="frame" x="125" y="10" width="125.66666666666669" height="202"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U9N-gL-4Nb">
-                                <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="40.666666666666664"/>
+                                <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Ad Soyad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-yB-AC3">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="17.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="32.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfH-Ui-h5g">
-                                        <rect key="frame" x="0.0" y="21.333333333333336" width="74.666666666666671" height="19.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="36.666666666666664" width="74.666666666666671" height="19.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +57,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-9I-onn">
-                                <rect key="frame" x="0.0" y="50.666666666666671" width="117.66666666666667" height="38.666666666666671"/>
+                                <rect key="frame" x="0.0" y="66" width="117.66666666666667" height="38.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı Tipi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUG-5m-5NZ">
                                         <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="17.333333333333332"/>
@@ -88,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserTypeDetail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ral-1O-6Yn">
-                                        <rect key="frame" x="0.0" y="19.333333333333336" width="117.66666666666667" height="19.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="19.333333333333329" width="117.66666666666667" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -96,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-0C-1Ti">
-                                <rect key="frame" x="0.0" y="99.333333333333329" width="87" height="38.666666666666671"/>
+                                <rect key="frame" x="0.0" y="114.66666666666667" width="87" height="38.666666666666671"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-z5-5EY">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="17.333333333333332"/>
@@ -113,7 +91,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-wq-uja">
-                                <rect key="frame" x="0.0" y="148" width="125.66666666666667" height="38.666666666666657"/>
+                                <rect key="frame" x="0.0" y="163.33333333333334" width="125.66666666666667" height="38.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı Adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-WZ-KqO">
                                         <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="17.333333333333332"/>
@@ -122,7 +100,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameDetail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-BA-GRG">
-                                        <rect key="frame" x="0.0" y="19.333333333333343" width="125.66666666666667" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="19.333333333333314" width="125.66666666666667" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -131,23 +109,35 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kKH-W3-9cj">
+                        <rect key="frame" x="72" y="227" width="251" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="WAK-fX-8W4"/>
+                        </constraints>
+                        <segments>
+                            <segment title="Son Ölçümler"/>
+                            <segment title="Atanmış Görevler"/>
+                        </segments>
+                        <color key="selectedSegmentTintColor" name="activePrimaryButtonColor"/>
+                        <connections>
+                            <action selector="valueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="iEI-QE-HKd"/>
+                        </connections>
+                    </segmentedControl>
                 </subviews>
                 <constraints>
                     <constraint firstItem="awE-YL-gyf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4LT-vl-Sgb"/>
-                    <constraint firstItem="6Sr-UA-gt3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5Da-PR-fQu"/>
                     <constraint firstItem="ARx-en-qwL" firstAttribute="leading" secondItem="awE-YL-gyf" secondAttribute="trailing" constant="10" id="8x9-d7-Rw8"/>
                     <constraint firstItem="ARx-en-qwL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FIi-zD-4Ql"/>
-                    <constraint firstItem="6Sr-UA-gt3" firstAttribute="top" secondItem="ARx-en-qwL" secondAttribute="bottom" constant="15" id="IQi-0H-zBK"/>
                     <constraint firstItem="awE-YL-gyf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="MWl-zz-Bil"/>
-                    <constraint firstAttribute="trailing" secondItem="6Sr-UA-gt3" secondAttribute="trailing" constant="10" id="iIW-ja-emF"/>
-                    <constraint firstAttribute="bottom" secondItem="6Sr-UA-gt3" secondAttribute="bottom" constant="10" id="nEC-la-qsN"/>
+                    <constraint firstItem="kKH-W3-9cj" firstAttribute="top" secondItem="ARx-en-qwL" secondAttribute="bottom" constant="15" id="lJT-NJ-ieA"/>
+                    <constraint firstItem="kKH-W3-9cj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="puk-ZG-eXu"/>
+                    <constraint firstAttribute="bottom" secondItem="kKH-W3-9cj" secondAttribute="bottom" constant="10" id="sxi-I8-eS1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="email" destination="6Ck-ED-GlT" id="c6k-x5-BzQ"/>
                 <outlet property="fullName" destination="TfH-Ui-h5g" id="uKe-As-fQ1"/>
-                <outlet property="taskInstanceSegmentedControl" destination="bzu-0d-nTd" id="7W6-nK-2k5"/>
                 <outlet property="userImage" destination="awE-YL-gyf" id="ZSn-sY-O8Z"/>
                 <outlet property="userType" destination="ral-1O-6Yn" id="ore-h3-0Yr"/>
                 <outlet property="username" destination="Rz9-BA-GRG" id="Uyi-ck-Liq"/>
