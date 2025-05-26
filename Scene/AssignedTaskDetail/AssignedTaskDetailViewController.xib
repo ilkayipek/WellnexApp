@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssignedTaskDetailViewController" customModule="WellnexApp" customModuleProvider="target">
             <connections>
-                <outlet property="assignedByLabel" destination="9o2-0q-uLe" id="fWn-hf-dOX"/>
+                <outlet property="assignedByLabel" destination="auI-2w-TV1" id="Dac-EK-VGu"/>
                 <outlet property="assignedToLabel" destination="auy-mm-qv6" id="8FJ-Eo-e3P"/>
                 <outlet property="daysCollectionView" destination="Lpp-f9-G9L" id="mxU-Pu-BAP"/>
                 <outlet property="doctorNoteTitleLabel" destination="nuY-Eg-1gb" id="dAK-XS-Ihv"/>
@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsQ-ns-3sI" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
-                    <rect key="frame" x="10" y="127.99999999999997" width="373" height="300.33333333333326"/>
+                    <rect key="frame" x="10" y="128" width="373" height="339"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-YO-O34">
-                            <rect key="frame" x="10" y="10" width="353" height="280.33333333333331"/>
+                            <rect key="frame" x="10" y="10" width="353" height="319"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mu6-Rn-OlB" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -51,7 +51,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D3E-pH-ypj">
-                                    <rect key="frame" x="90" y="0.0" width="263" height="280.33333333333331"/>
+                                    <rect key="frame" x="90" y="0.0" width="263" height="319"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MeasureLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2X-0D-RIm">
                                             <rect key="frame" x="0.0" y="0.0" width="263" height="28.666666666666668"/>
@@ -59,8 +59,57 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbX-mS-ndM">
+                                            <rect key="frame" x="0.0" y="38.666666666666657" width="263" height="60"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="Vc7-EE-6tn" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="D9X-dU-E1L"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Z5M-3J-BP2"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="primaryLabelColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="4RM-yW-iji">
+                                                    <rect key="frame" x="60" y="10.666666666666686" width="193" height="38.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doktor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af9-aD-56U">
+                                                            <rect key="frame" x="0.0" y="0.0" width="193" height="19.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assignedBy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auI-2w-TV1">
+                                                            <rect key="frame" x="0.0" y="19.333333333333314" width="193" height="19.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Vc7-EE-6tn" firstAttribute="top" secondItem="EbX-mS-ndM" secondAttribute="top" constant="10" id="3BA-3b-zQB"/>
+                                                <constraint firstAttribute="trailing" secondItem="4RM-yW-iji" secondAttribute="trailing" constant="10" id="A3h-ak-ZCt"/>
+                                                <constraint firstItem="Vc7-EE-6tn" firstAttribute="leading" secondItem="EbX-mS-ndM" secondAttribute="leading" constant="10" id="FVj-dG-T0j"/>
+                                                <constraint firstItem="4RM-yW-iji" firstAttribute="leading" secondItem="Vc7-EE-6tn" secondAttribute="trailing" constant="10" id="Pj3-Fg-Nv8"/>
+                                                <constraint firstItem="4RM-yW-iji" firstAttribute="centerY" secondItem="EbX-mS-ndM" secondAttribute="centerY" id="Xei-A1-XFy"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vc7-EE-6tn" secondAttribute="bottom" constant="10" id="t4z-Q2-Z2E"/>
+                                            </constraints>
+                                        </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CF1-cA-Ozo">
-                                            <rect key="frame" x="0.0" y="38.666666666666657" width="263" height="19.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="108.66666666666666" width="263" height="19.333333333333329"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqt-re-NtV">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="19.333333333333332"/>
@@ -68,51 +117,31 @@
                                                         <constraint firstAttribute="width" constant="70" id="4h6-9L-3VD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AssignedTo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auy-mm-qv6">
                                                     <rect key="frame" x="70" y="0.0" width="193" height="19.333333333333332"/>
-                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="LF9-r3-QPh">
-                                            <rect key="frame" x="0.0" y="68" width="263" height="19.333333333333329"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doktor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKG-g8-CHH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="19.333333333333332"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="DdX-I4-hMo"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assignedBy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o2-0q-uLe">
-                                                    <rect key="frame" x="70" y="0.0" width="193" height="19.333333333333332"/>
-                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartDate-EndDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-Cm-Qer">
-                                            <rect key="frame" x="0.0" y="97.333333333333343" width="263" height="17.666666666666671"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="138" width="263" height="15.666666666666657"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doktor Notu:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdf-C4-bMX">
-                                            <rect key="frame" x="0.0" y="124.99999999999999" width="263" height="17.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="163.66666666666669" width="263" height="17.333333333333343"/>
                                             <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLU-ee-M3d" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="152.33333333333331" width="263" height="128"/>
+                                            <rect key="frame" x="0.0" y="191" width="263" height="128"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DoctorNote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuY-Eg-1gb">
                                                     <rect key="frame" x="10" y="10" width="243" height="108"/>
@@ -154,7 +183,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aW-wk-7gM" customClass="CustomContainerUIView" customModule="WellnexApp" customModuleProvider="target">
-                    <rect key="frame" x="10" y="438.33333333333326" width="373" height="153"/>
+                    <rect key="frame" x="10" y="477" width="373" height="153"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanımlı Günler ve Periyotlar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-r9-9Q2">
                             <rect key="frame" x="10" y="10" width="353" height="23"/>
@@ -213,6 +242,7 @@
         </view>
     </objects>
     <resources>
+        <image name="doctor" width="512" height="512"/>
         <namedColor name="activePrimaryButtonColor">
             <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

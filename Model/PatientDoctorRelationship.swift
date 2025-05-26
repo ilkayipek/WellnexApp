@@ -14,7 +14,7 @@ struct PatientDoctorRelationshipModel: FirebaseIdentifiable{
     var patientName: String
     var doctorName: String
     var isActive: Bool
-    var status: String
+    var status: RelationshipStatus
     var notes: String
     var createdAt: Date
     
@@ -26,7 +26,7 @@ struct PatientDoctorRelationshipModel: FirebaseIdentifiable{
         self.patientName = patientName
         self.doctorName = doctorName
         self.isActive = false
-        self.status = status.rawValue
+        self.status = status
         self.notes = note
         self.createdAt = Date()
     }

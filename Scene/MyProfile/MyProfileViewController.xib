@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,19 +24,35 @@
                     <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDZ-Zb-uyZ">
+                    <rect key="frame" x="339" y="117.99999999999999" width="54" height="34.333333333333329"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button">
+                        <imageReference key="image" image="rectangle.portrait.and.arrow.forward.fill" catalog="system" symbolScale="large"/>
+                    </state>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="rectangle.portrait.and.arrow.forward.fill" catalog="system" symbolScale="large"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signOutButtonTapped:" destination="-1" eventType="touchUpInside" id="IIj-3t-QJ8"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="qcL-EG-z7d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4Fr-Lx-8fC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zDZ-Zb-uyZ" secondAttribute="trailing" id="LYG-Lc-uAB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qcL-EG-z7d" secondAttribute="trailing" id="LhF-dE-JEc"/>
                 <constraint firstItem="qcL-EG-z7d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ufi-WE-QoA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qcL-EG-z7d" secondAttribute="bottom" id="Ug6-6W-f7f"/>
+                <constraint firstItem="zDZ-Zb-uyZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r3f-Mx-Gn9"/>
             </constraints>
             <point key="canvasLocation" x="100" y="-12"/>
         </view>
     </objects>
     <resources>
+        <image name="rectangle.portrait.and.arrow.forward.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

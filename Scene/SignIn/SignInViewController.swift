@@ -39,7 +39,11 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         switch currentUsr.userType {
             
         case .doctor:
-            break
+            let tabBar = DoctorTabBarController.loadFromNib()
+            let navController = UINavigationController(rootViewController: tabBar)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true)
+           
         case .patient:
             let targetVc = PatientTabBarController.loadFromNib()
             let newNavigationController = UINavigationController(rootViewController: targetVc)

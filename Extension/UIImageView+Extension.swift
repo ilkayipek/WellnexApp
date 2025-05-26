@@ -18,7 +18,7 @@ extension UIImageView {
         case .bloodSugar:
             loadImageFromAssets(.bloodSugar)
         case .pulse:
-            loadMeasureTypeImage(.pulse)
+            loadImageFromAssets(.pulse)
         case .bodyTemperature:
             loadImageFromAssets(.bodyTemperature)
         case .bloodPressure:

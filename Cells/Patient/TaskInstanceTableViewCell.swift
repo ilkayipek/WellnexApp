@@ -14,6 +14,7 @@ class TaskInstanceTableViewCell: UITableViewCell {
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var editableButton: UIButton!
     @IBOutlet weak var containerView: CustomContainerUIView!
+    @IBOutlet weak var assignedByLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class TaskInstanceTableViewCell: UITableViewCell {
     func loadCell(_ model: TaskInstanceModel){
         self.selectionStyle = .none
         let measureTypeLbl = model.measureTypeModel?.label
+        assignedByLabel.text = model.assignedBy
         
         measureLabel.text = measureTypeLbl?.rawValue
         slotHourRange.text = model.slot

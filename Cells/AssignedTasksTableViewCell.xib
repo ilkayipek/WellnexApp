@@ -43,36 +43,65 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cQu-wh-QuZ">
-                                        <rect key="frame" x="90" y="22.666666666666664" width="270" height="80"/>
+                                        <rect key="frame" x="90" y="2.3333333333333357" width="270" height="120.66666666666666"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MeasureLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-3A-78S">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MeasureLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-3A-78S">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="23"/>
                                                 <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-Hm-O4U">
-                                                <rect key="frame" x="0.0" y="33.000000000000007" width="270" height="19.333333333333336"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN1-q2-jyb">
+                                                <rect key="frame" x="0.0" y="33" width="270" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doktor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hz-99-YPg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="19.333333333333332"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="zSa-Et-pHF" customClass="CustomUIImageView" customModule="WellnexApp" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="9.9999999999999929" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="70" id="zI9-8a-jvo"/>
+                                                            <constraint firstAttribute="height" constant="40" id="M6I-ru-FOO"/>
+                                                            <constraint firstAttribute="width" constant="40" id="ZvW-fX-4aD"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assignedBy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-X4-Djl">
-                                                        <rect key="frame" x="70" y="0.0" width="200" height="19.333333333333332"/>
-                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="primaryLabelColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="LoK-FS-cHS">
+                                                        <rect key="frame" x="60" y="10.666666666666664" width="200" height="38.666666666666664"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doktor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="541-Y7-qhF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="19.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assignedBy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdr-WR-EV6">
+                                                                <rect key="frame" x="0.0" y="19.333333333333329" width="200" height="19.333333333333329"/>
+                                                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
-                                            </stackView>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="LoK-FS-cHS" secondAttribute="trailing" constant="10" id="DTL-5Q-fC1"/>
+                                                    <constraint firstItem="zSa-Et-pHF" firstAttribute="leading" secondItem="GN1-q2-jyb" secondAttribute="leading" constant="10" id="V5s-iC-qed"/>
+                                                    <constraint firstItem="zSa-Et-pHF" firstAttribute="top" secondItem="GN1-q2-jyb" secondAttribute="top" constant="10" id="fKD-DM-COV"/>
+                                                    <constraint firstItem="LoK-FS-cHS" firstAttribute="leading" secondItem="zSa-Et-pHF" secondAttribute="trailing" constant="10" id="ibw-cg-Dsy"/>
+                                                    <constraint firstItem="LoK-FS-cHS" firstAttribute="centerY" secondItem="GN1-q2-jyb" secondAttribute="centerY" id="oBb-xW-AaG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zSa-Et-pHF" secondAttribute="bottom" constant="10" id="unv-Cr-268"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartDate-EndDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4In-L5-8Bl">
-                                                <rect key="frame" x="0.0" y="62.333333333333336" width="270" height="17.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="103" width="270" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -111,15 +140,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="assignedByLabel" destination="sqN-X4-Djl" id="IHD-qG-nYa"/>
+                <outlet property="assignedByLabel" destination="Mdr-WR-EV6" id="sfD-6S-ZSj"/>
                 <outlet property="measureTypeImageView" destination="X0k-qT-87m" id="g2m-Ig-FEZ"/>
                 <outlet property="measureTypeLabel" destination="8u3-3A-78S" id="Fbl-IW-Dyh"/>
                 <outlet property="startAndEndDateLabel" destination="4In-L5-8Bl" id="X09-V0-XLk"/>
             </connections>
-            <point key="canvasLocation" x="123.66412213740458" y="62.323943661971832"/>
+            <point key="canvasLocation" x="120.61068702290076" y="50.352112676056343"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="doctor" width="512" height="512"/>
         <namedColor name="activePrimaryButtonColor">
             <color red="0.61500000953674316" green="0.74900001287460327" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

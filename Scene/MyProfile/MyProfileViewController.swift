@@ -9,6 +9,7 @@ import UIKit
 
 class MyProfileViewController: BaseViewController<MyProfileVideModel> {
     @IBOutlet weak var profileTableView: UITableView!
+    
     var currentUser: UserModel?
     var patientDoctorRelationships = [PatientDoctorRelationshipModel]()
 
@@ -63,10 +64,26 @@ class MyProfileViewController: BaseViewController<MyProfileVideModel> {
     private func sortByStatus(status: RelationshipStatus) {
         
         patientDoctorRelationships.sort {
-            $0.status == status.rawValue && $1.status != status.rawValue
+            $0.status == status && $1.status != status
         }
     }
+    
+    private func transitionToSignInScene() {
+        
+        let rootVc = SignInViewController.loadFromNib()
+        let navVc = UINavigationController(rootViewController: rootVc)
+        navVc.modalPresentationStyle = .fullScreen
+        present(navVc, animated: true)
+    }
 
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        viewModel?.signOut { [weak self] status in
+            
+            guard let self else {return}
+            guard status else {return}
+            self.transitionToSignInScene()
+        }
+    }
 }
 
 
@@ -144,7 +161,7 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     private func updateRelationshipModel(at index: Int, status: RelationshipStatus, isActive: Bool ) {
         
         var updateModel = patientDoctorRelationships[index]
-        updateModel.status = status.rawValue
+        updateModel.status = status
         updateModel.isActive = isActive
         
         viewModel?.updateRelationship(relationshipModel: updateModel) { [weak self] status in
