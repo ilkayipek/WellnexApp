@@ -170,6 +170,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="assignedByLabel" destination="CYO-4I-Zhq" id="Cn7-IJ-zSI"/>
                 <outlet property="completedButton" destination="XKC-Y1-kUS" id="utH-ac-irU"/>
                 <outlet property="containerView" destination="wTJ-6d-hhW" id="Bd9-0B-IuT"/>
                 <outlet property="editableButton" destination="Rz6-bR-oxA" id="ao4-Tk-U5f"/>
