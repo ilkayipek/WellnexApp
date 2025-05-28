@@ -83,7 +83,18 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
     }
     
     private func reportCreateTask(taskId: String, patientId: String) {
+        guard let currentUsrId = AuthManager.shared.auth.currentUser?.uid else {return}
         
+        let targetVc = DoctorTabBarController.loadFromNib()
+        targetVc.selectedIndex = 1
+        
+        if let selectedVc = targetVc.selectedViewController as? ReportsViewController {
+            selectedVc.postReport(taskId: taskId, patientId: patientId, doctorId: currentUsrId)
+        }
+        
+        let navigationController = UINavigationController(rootViewController: targetVc)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
 
 }
