@@ -19,6 +19,7 @@ class DoctorTabBarController: UITabBarController {
         
         let myPatients = MyPatientsViewController()
         let patientSelect = AddTaskPatientSelectionViewController()
+        let myReports = ReportsViewController()
         let myProfile = MyProfileViewController()
         
         
@@ -35,13 +36,16 @@ class DoctorTabBarController: UITabBarController {
         myPatients.tabBarItem = UITabBarItem(title: "Hastalarım", image: UIImage(systemName: "person.3"), tag: 0)
         myPatients.tabBarItem.selectedImage = UIImage(systemName: "person.3.fill")
         
+        myReports.tabBarItem = UITabBarItem(title: "Raporlarım", image: UIImage(systemName: "ecg.text.page"), tag: 1)
+        myProfile.tabBarItem.selectedImage = UIImage(systemName: "ecg.text.page.fill")
+        
         patientSelect.tabBarItem = UITabBarItem(title: "Görev Tanımla", image: UIImage(systemName: "plus.app"), tag: 2)
         patientSelect.tabBarItem.selectedImage = UIImage(systemName: "plus.app.fill")
         
         myProfile.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 3)
         myProfile.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
         
-        setViewControllers([myPatients,patientSelect,myProfile], animated: true)
+        setViewControllers([myPatients,myReports,patientSelect,myProfile], animated: true)
         
     }
 }
