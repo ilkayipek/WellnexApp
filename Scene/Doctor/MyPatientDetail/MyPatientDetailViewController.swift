@@ -81,6 +81,10 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
             self.myPatientDetailTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    private func reportCreateTask(taskId: String, patientId: String) {
+        
+    }
 
 }
 
@@ -168,6 +172,35 @@ extension MyPatientDetailViewController: UITableViewDelegate, UITableViewDataSou
         
         return indexPath.section != 0 && segmentedControlSelectedIndex == 1
     }
+    
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        if indexPath.section != 0, segmentedControlSelectedIndex == 1 {
+            let reportAction = UIContextualAction(style: .normal, title: "Rapor Oluştur") { [weak self] (action, view, completionHandler) in
+                guard let self else {return}
+                
+                let taskId = assignedTasks[indexPath.row].id
+                let patientId = self.patientId ?? ""
+                
+                self.reportCreateTask(taskId: taskId, patientId: patientId)
+                print("Rapor oluşturuluyor: \(taskId) id ye sahip task")
+                
+                completionHandler(true)
+            }
+            
+            reportAction.backgroundColor = .systemBlue
+            reportAction.image = UIImage(systemName: "doc.text")
+            
+            let configuration = UISwipeActionsConfiguration(actions: [reportAction])
+            configuration.performsFirstActionWithFullSwipe = false
+
+            return configuration
+        }
+        return nil
+       
+    }
+
 
 }
 
