@@ -22,19 +22,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qQ7-bk-aDu">
-                    <rect key="frame" x="10" y="127.99999999999999" width="373" height="221.66666666666663"/>
+                    <rect key="frame" x="19.666666666666657" y="128" width="353.66666666666674" height="162.33333333333337"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-zH-niQ">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353.66666666666669" height="40"/>
                             <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="35"/>
                             <color key="textColor" name="primaryLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-9N-k4E">
-                            <rect key="frame" x="0.0" y="59.999999999999993" width="373" height="102.33333333333331"/>
+                            <rect key="frame" x="0.0" y="59.999999999999993" width="353.66666666666669" height="102.33333333333331"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Posta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMJ-R1-fSD" customClass="CustomUITextField" customModule="WellnexApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="41"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353.66666666666669" height="41"/>
                                     <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzs-N9-ssY" customClass="CustomUITextField" customModule="WellnexApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="61" width="373" height="41.333333333333343"/>
+                                    <rect key="frame" x="0.0" y="61" width="353.66666666666669" height="41.333333333333343"/>
                                     <color key="backgroundColor" name="primaryTextFieldBackgroundColor"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -65,31 +65,31 @@
                                 </textField>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moP-b1-PqT" customClass="CustomUIButton" customModule="WellnexApp">
-                            <rect key="frame" x="0.0" y="182.33333333333331" width="373" height="39.333333333333343"/>
-                            <color key="backgroundColor" name="activePrimaryButtonColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Giriş Yap" subtitle="">
-                                <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
-                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </buttonConfiguration>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
-                                    <real key="value" value="15"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="0.0"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="activePrimaryButtonColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="signInTapped:" destination="-1" eventType="touchUpInside" id="3aP-b0-Cw0"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moP-b1-PqT" customClass="CustomUIButton" customModule="WellnexApp">
+                    <rect key="frame" x="72.666666666666671" y="310.33333333333331" width="247.66666666666663" height="39.333333333333314"/>
+                    <color key="backgroundColor" name="activePrimaryButtonColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Giriş Yap" subtitle="">
+                        <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="activePrimaryButtonColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="signInTapped:" destination="-1" eventType="touchUpInside" id="3aP-b0-Cw0"/>
+                    </connections>
+                </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zOv-zD-mWi">
                     <rect key="frame" x="98.333333333333329" y="508.66666666666669" width="196.33333333333337" height="245.33333333333331"/>
                     <subviews>
@@ -125,13 +125,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Ahb-P4-ic4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7o2-dz-y41"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qQ7-bk-aDu" secondAttribute="trailing" constant="10" id="FGI-Yn-UBs"/>
-                <constraint firstItem="qQ7-bk-aDu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Jbn-SY-Xuv"/>
+                <constraint firstItem="moP-b1-PqT" firstAttribute="top" secondItem="qQ7-bk-aDu" secondAttribute="bottom" constant="20" id="8Qe-bh-0Xv"/>
+                <constraint firstItem="moP-b1-PqT" firstAttribute="width" secondItem="qQ7-bk-aDu" secondAttribute="width" multiplier="0.7" id="J4g-bx-54b"/>
                 <constraint firstItem="Ahb-P4-ic4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="Jto-tQ-sou"/>
                 <constraint firstItem="b4w-9N-k4E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.12" id="Ze8-og-8Ls"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zOv-zD-mWi" secondAttribute="bottom" constant="30" id="h5Y-Qa-zYq"/>
                 <constraint firstItem="zOv-zD-mWi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hS9-cb-4Vb"/>
+                <constraint firstItem="moP-b1-PqT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="naj-qD-MwK"/>
                 <constraint firstItem="qQ7-bk-aDu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="pvC-dU-0Gq"/>
+                <constraint firstItem="qQ7-bk-aDu" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="sfV-EG-H03"/>
+                <constraint firstItem="qQ7-bk-aDu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z13-jW-9u0"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
