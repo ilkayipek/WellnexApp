@@ -50,6 +50,16 @@ class ReportsViewController: BaseViewController<ReportsViewModel> {
         
     }
     
+    private func deleteReport(indexPath: IndexPath,_ report: ReportModel) {
+        
+        viewModel?.deleteReportModel(report) { [weak self] status in
+            guard let self else {return}
+            
+            self.reports.remove(at: indexPath.row)
+            self.reportsTableView.reloadData()
+        }
+    }
+    
     @objc private func getReports() {
         
         viewModel?.fetchReports { [weak self] reports in
@@ -77,6 +87,31 @@ extension ReportsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.loadCell(report)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        
+        let report = reports[indexPath.row]
+        
+        
+        if report.isComplete {
+            
+            if editingStyle == .delete {
+                
+                deleteReport(indexPath: indexPath, report)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   canEditRowAt indexPath: IndexPath) -> Bool {
+        guard let user: UserModel = UserInfo.shared.retrieve(key: .userModel) else {return false}
+        
+        let report = reports[indexPath.row]
+        
+        return report.isComplete && user.userType == .doctor
     }
     
     
