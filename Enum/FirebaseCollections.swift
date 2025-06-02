@@ -11,4 +11,5 @@ enum FirebaseCollections: String {
     case measureTypes = "measureTypes"
     case task = "Task"
     case taskInstances = "TaskInstances"
+    case report = "Report"
 }
