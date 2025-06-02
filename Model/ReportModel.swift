@@ -29,5 +29,7 @@ struct ReportModel: FirebaseIdentifiable {
     var lowestValue: Double?
     
     var isComplete: Bool
-    var createdAt: Date?
+    var createdAt = Date()
+    
+    var taskModel: TaskModel?
 }
