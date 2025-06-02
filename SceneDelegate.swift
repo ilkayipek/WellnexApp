@@ -33,11 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         /*
-         let tabBar = SignInViewController.loadFromNib()
+         let tabBar = ReportsViewController.loadFromNib()
          let rootVc = UINavigationController(rootViewController: tabBar)
          
          window?.rootViewController = rootVc
-         */
+        */
         
         window?.makeKeyAndVisible()
         
