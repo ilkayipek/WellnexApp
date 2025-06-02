@@ -80,5 +80,28 @@ class ReportsViewModel: BaseViewModel {
                 closure(true)
             }
     }
+    
+    func deleteReportModel(_ report: ReportModel, _ closure: @escaping (Bool) -> Void) {
+        
+        alertMessage?("Raporu Silmek İstediğinize Emin Misinizi?","","Sil") {[weak self] _ in
+            guard let self else {return}
+            
+            gradientLoagingTabAnimation?.startAnimations()
+            
+            Network.shared.delete(report, in: .report) { result in
+                
+                self.gradientLoagingTabAnimation?.stopAnimations()
+                switch result {
+                case .success(_):
+                    closure(true)
+                case .failure(let failure):
+                    self.failAnimation?("HATA: \(failure.localizedDescription)")
+                    closure(false)
+                }
+            }
+        }
+        
+        
+    }
 
 }
