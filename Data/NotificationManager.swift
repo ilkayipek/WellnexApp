@@ -45,31 +45,25 @@ class NotificationManager {
     private func setNotifications(_ results: [TaskInstanceModel]) {
         let now = Date()
         let center = UNUserNotificationCenter.current()
+        
+        var startSlots =  [String]()
 
         for result in results {
             let taskId = result.id
             let slotStart = result.slotStart
-            let slotEnd = result.slotEnd
-
-            func dateFor(time: String) -> Date? {
-                let components = time.split(separator: ":")
-                guard components.count == 2,
-                      let hour = Int(components[0]),
-                      let minute = Int(components[1]) else { return nil }
-
-                var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
-                dateComponents.hour = hour
-                dateComponents.minute = minute
-                return Calendar.current.date(from: dateComponents)
+            
+            guard !startSlots.contains(slotStart) else {
+                continue
             }
+            
+            startSlots.append(slotStart)
 
-            guard let startDate = dateFor(time: slotStart),
-                  let endDate = dateFor(time: slotEnd) else {
+            guard let startDate = dateFor(time: slotStart) else {
                 continue
             }
 
             let startReminderDate = Calendar.current.date(byAdding: .minute, value: -15, to: startDate)!
-
+            
             if startReminderDate > now {
                 let startContent = UNMutableNotificationContent()
                 startContent.title = "⏰ Görev Yaklaşıyor"
@@ -86,4 +80,19 @@ class NotificationManager {
 
         print("✅ Bildirimler başarıyla yeniden planlandı.")
     }
+    
+    func dateFor(time: String) -> Date? {
+        let now = Date()
+        
+        let components = time.split(separator: ":")
+        guard components.count == 2,
+              let hour = Int(components[0]),
+              let minute = Int(components[1]) else { return nil }
+
+        var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        return Calendar.current.date(from: dateComponents)
+    }
+
 }
