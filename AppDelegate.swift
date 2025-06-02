@@ -31,12 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let activeColor = UIColor.activePrimaryButton
         
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: UIFont(name: "Georgia-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20),
+            .foregroundColor: UIColor.activePrimaryButton
+        ]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
         UITabBar.appearance().tintColor = activeColor
         UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
         
         UINavigationBar.appearance().tintColor = activeColor
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: activeColor]
-        
         
         return true
     }

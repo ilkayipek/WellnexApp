@@ -21,7 +21,20 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         super.viewDidLoad()
         
         viewModel = SignUpViewModel()
+        addKeywordControl()
        
+    }
+    
+    private func addKeywordControl() {
+        
+        let tapRec = UITapGestureRecognizer()
+        tapRec.addTarget(self, action: #selector(closeKeyboard))
+        view.addGestureRecognizer(tapRec)
+        
+    }
+    
+    @objc private func closeKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {

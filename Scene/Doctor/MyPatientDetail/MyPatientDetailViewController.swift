@@ -82,14 +82,14 @@ class MyPatientDetailViewController: BaseViewController<MyPatientDetailViewModel
         }
     }
     
-    private func reportCreateTask(taskId: String, patientId: String) {
+    private func reportCreateTask(task: TaskModel, patientId: String) {
         guard let currentUsrId = AuthManager.shared.auth.currentUser?.uid else {return}
         
         let targetVc = DoctorTabBarController.loadFromNib()
         targetVc.selectedIndex = 1
         
         if let selectedVc = targetVc.selectedViewController as? ReportsViewController {
-            selectedVc.postReport(taskId: taskId, patientId: patientId, doctorId: currentUsrId)
+            selectedVc.postReport(task: task, patientId: patientId, doctorId: currentUsrId)
         }
         
         let navigationController = UINavigationController(rootViewController: targetVc)
@@ -191,11 +191,11 @@ extension MyPatientDetailViewController: UITableViewDelegate, UITableViewDataSou
             let reportAction = UIContextualAction(style: .normal, title: "Rapor Oluştur") { [weak self] (action, view, completionHandler) in
                 guard let self else {return}
                 
-                let taskId = assignedTasks[indexPath.row].id
+                let task = assignedTasks[indexPath.row]
                 let patientId = self.patientId ?? ""
                 
-                self.reportCreateTask(taskId: taskId, patientId: patientId)
-                print("Rapor oluşturuluyor: \(taskId) id ye sahip task")
+                self.reportCreateTask(task: task, patientId: patientId)
+                print("Rapor oluşturuluyor: \(task.measureTypeModel?.label?.rawValue ?? "") id ye sahip task")
                 
                 completionHandler(true)
             }
