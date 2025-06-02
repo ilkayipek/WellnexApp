@@ -117,6 +117,8 @@ extension PatientHomeViewController: UITableViewDelegate, UITableViewDataSource 
         label.frame = CGRect(x: 5, y: 0, width: tableView.frame.width - 32, height: 40)
 
         let container = UIView()
+        container.backgroundColor = UIColor.white
+        container.alpha = 0.9
         container.addSubview(label)
         return container
     }
