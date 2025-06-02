@@ -11,7 +11,7 @@ class PatientTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.delegate = self
         addTabItems()
     }
     
@@ -19,6 +19,7 @@ class PatientTabBarController: UITabBarController {
         
         let homeVc = PatientHomeViewController()
         let assignedTasks = AssignedTasksViewController()
+        let reports = ReportsViewController()
         let myProfile = MyProfileViewController()
         
         
@@ -32,7 +33,7 @@ class PatientTabBarController: UITabBarController {
         tabBar.insertSubview(shadowView, at: 0)
         
         
-        homeVc.tabBarItem = UITabBarItem(title: "Ana sayfa", image: UIImage(systemName: "house"), tag: 0)
+        homeVc.tabBarItem = UITabBarItem(title: "Günün Görevleri", image: UIImage(systemName: "house"), tag: 0)
         homeVc.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
         
         assignedTasks.tabBarItem = UITabBarItem(title: "Tanımlı Görevler", image: UIImage(systemName: "list.bullet"), tag: 2)
@@ -41,7 +42,39 @@ class PatientTabBarController: UITabBarController {
         myProfile.tabBarItem = UITabBarItem(title: "Profil", image: UIImage(systemName: "person"), tag: 3)
         myProfile.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
         
-        setViewControllers([homeVc,assignedTasks,myProfile], animated: true)
+        reports.tabBarItem = UITabBarItem(title: "Raporlarım", image: UIImage(systemName: "ecg.text.page"), tag: 1)
+        reports.tabBarItem.selectedImage = UIImage(systemName: "ecg.text.page.fill")
+        
+        let controllers = [homeVc,assignedTasks,reports,myProfile]
+        
+        setViewControllers(controllers, animated: true)
+        
+        self.selectedIndex = 0
+        self.navigationItem.title = controllers[self.selectedIndex].title
+        
         
     }
 }
+
+extension PatientTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        updateTitle(for: selectedIndex)
+    }
+    
+    private func updateTitle(for index: Int) {
+        switch index {
+        case 0:
+            self.navigationItem.title = "Günün Görevleri"
+        case 1:
+            self.navigationItem.title = "Tanımlı Görevler"
+        case 2:
+            self.navigationItem.title = "Raporlarım"
+        case 3:
+            self.navigationItem.title = "Profil"
+        default:
+            self.navigationItem.title = ""
+        }
+    }
+}
+
+
