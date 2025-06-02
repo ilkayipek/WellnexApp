@@ -49,6 +49,12 @@ class PatientHomeViewController: BaseViewController<PatientHomeViewModel> {
         getTaskInstances()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getTaskInstances()
+    }
+    
     func configureTableView() {
         taskInstancesTableView.delegate = self
         taskInstancesTableView.dataSource = self
