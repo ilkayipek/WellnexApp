@@ -46,6 +46,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         
         viewModel?.signUp(fullName, email, password, passwordConf, userType) { [weak self] status in
             guard let self else { return }
+            guard status else {return}
             
             self.successCreateAccount()
         }
@@ -60,8 +61,17 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     //Redirect to the relevant page according to user type status
     func successCreateAccount() {
         
-        let targeVc = MyProfileViewController.loadFromNib()
-        self.navigationController?.pushViewController(targeVc, animated: true)
+        switch userType {
+        case .doctor:
+            let targetVc = DoctorTabBarController()
+            targetVc.modalPresentationStyle = .fullScreen
+            self.present(targetVc, animated: true)
+        case .patient:
+            let targetVc = PatientTabBarController()
+            targetVc.modalPresentationStyle = .fullScreen
+            self.present(targetVc, animated: true)
+        }
+        
     }
     
     @IBAction func userTypeChanged(_ sender: UISegmentedControl) {

@@ -29,11 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         Messaging.messaging().delegate = self
         
-        let activeColor = UIColor.activePrimaryButton
+        let activeColor = UIColor.primaryLabelColor
         
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
-            .font: UIFont(name: "Georgia-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20),
+            .font: UIFont(name: "Georgia-Bold", size: 25) ?? UIFont.boldSystemFont(ofSize: 25),
             .foregroundColor: UIColor.activePrimaryButton
         ]
 
