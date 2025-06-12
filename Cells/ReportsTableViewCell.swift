@@ -62,7 +62,7 @@ class ReportsTableViewCell: UITableViewCell {
         
         guard let measureModel = reportModel.taskModel?.measureTypeModel else {return}
         
-        let measureTxt = "\(measureModel.label?.rawValue ?? "") Ölçümü"
+        let measureTxt = "\(measureModel.label?.rawValue ?? "") Ölçümü Raporu"
         measureLabel.text = measureTxt
         measureTypeImageView.loadMeasureTypeImage(measureModel.label ?? .pulse)
     }
