@@ -32,7 +32,7 @@ class SignUpViewModel: BaseViewModel {
                             }
                         }
                     } else {
-                        failAnimation?("Şifreniz en az 8 karakter uzunluğunda olmalıdır ve en az bir büyük harf, bir küçük harf, bir sayı ve bir özel karakter içermelidir. Örneğin: Abcd1234!")
+                        failAnimation?("Şifreniz en az 8 karakter olmalı ve en az bir harf ile bir rakam içermelidir. Örneğin: Abcd1234")
                     }
                 } else {
                     failAnimation?("Lütfen geçerli bir Eposta giriniz.")
@@ -60,7 +60,7 @@ class SignUpViewModel: BaseViewModel {
     }
 
     private func validatePassword(_ password: String) -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d).{8,}$"
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordPredicate.evaluate(with: password)
     }
