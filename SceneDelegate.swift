@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: widowScene)
         
+        
         if let currentUser = AuthManager.shared.auth.currentUser {
             
             AuthManager.shared.getUserDocs(id: currentUser.uid) {[weak self] status, error in
@@ -31,9 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             transitToSignInVc()
         }
+         
         
         /*
-         let tabBar = ReportsViewController.loadFromNib()
+         let tabBar = ReportDetailViewController.loadFromNib()
          let rootVc = UINavigationController(rootViewController: tabBar)
          
          window?.rootViewController = rootVc

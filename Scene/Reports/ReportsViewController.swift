@@ -114,5 +114,14 @@ extension ReportsViewController: UITableViewDelegate, UITableViewDataSource {
         return report.isComplete && user.userType == .doctor
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let report = reports[indexPath.row]
+        guard report.isComplete else {return}
+        
+        let targetVc = ReportDetailViewController.loadFromNib()
+        targetVc.setReportModel(report)
+        
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
 }
