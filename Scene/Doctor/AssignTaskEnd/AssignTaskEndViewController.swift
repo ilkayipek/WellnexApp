@@ -68,8 +68,12 @@ class AssignTaskEndViewController: BaseViewController<AssignTaskEndViewModel> {
         let timeSlots: [String: [String]] = selectedTimeSlotIndexes.reduce(into: [:]) { result, pair in
             let (dayIndex, hourIndexes) = pair
             let day = DayOfWeek.allCases[dayIndex].rawValue
-            let selectedSlots = hourIndexes.map { TimeSlotPeriod.allCases[$0].rawValue }
-            result[day] = selectedSlots
+            
+            if !hourIndexes.isEmpty {
+                let selectedSlots = hourIndexes.map { TimeSlotPeriod.allCases[$0].rawValue }
+                result[day] = selectedSlots
+            }
+            
         }
 
         return TaskModel(id: id, assignedBy: doctorName, assignedTo: patientName, description: taskNote, measureTypeId: measureId, patientId: patientId,doctorId: doctorId, relationId: relationId, startDate: startDate, endDate: endDate, timeSlots: timeSlots)
