@@ -26,15 +26,20 @@ class AddTaskPatientSelectionViewController: BaseViewController<AddTaskPatientSe
         myPatientsTableView.dataSource = self
         
         myPatientsTableView.registerCellFromNib(MyProfilePatientsTableViewCell.self)
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getMyPatientsRelations), for: .valueChanged)
+        myPatientsTableView.refreshControl = refreshControl
     }
     
-    private func getMyPatientsRelations() {
+    @objc private func getMyPatientsRelations() {
         
         viewModel?.fetchMyRelations { [weak self] result in
             guard let self else {return}
             
             self.myPatientsRelations = result
             self.myPatientsTableView.reloadData()
+            self.myPatientsTableView.refreshControl?.endRefreshing()
         }
     }
     
